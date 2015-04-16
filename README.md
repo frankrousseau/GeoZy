@@ -18,12 +18,12 @@ Inspired from [GeoJSON](http://geojson.org/)
 *"GeoJSON is a format for encoding a variety of geographic data structures"*  
 online user experience http://geojson.io
 
-* simple storage enviroment as [Cozy-Bookmarks](https://github.com/Piour/cozy-bookmarks)
+* simple storage environment as [Cozy-Bookmarks](https://github.com/Piour/cozy-bookmarks)
 * being able to upload a .JSON files and maybe other formats (KML, GPX, CSV, TopoJSON)
-* being able to load/open a map to pinpoint and save it under the environement
+* being able to load/open a map to pinpoint and save it under the environment
 * being able to download, export or share selected point-point
 
 
 ## Dream About
 
-* a [MapBox](https://github.com/mapbox) pinpoint rendering environement
+* a [MapBox](https://github.com/mapbox) pinpoint rendering environment
