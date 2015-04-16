@@ -23,7 +23,7 @@ online user experience http://geojson.io
 * simple storage environment as [Cozy-Bookmarks](https://github.com/Piour/cozy-bookmarks)
 * being able to upload a .JSON files and maybe other formats (KML, GPX, CSV, TopoJSON)
 * being able to load/open a map to pinpoint and save it under the environment
-* being able to download, export or share selected point-point
+* being able to download, export or share selected pin-point
 
 
 ## Dream About
