@@ -6,7 +6,7 @@
     "node = 0.10.x"
   ],
   "description": "A simple tool for creating, sharing pin-point",
-  "license": "MIT",
+  "license": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/ChironEn/GeoZy.git"
