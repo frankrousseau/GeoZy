@@ -3,7 +3,7 @@
 *simple tool for creating, sharing pin-point*  
 
 atm: white page with title  
-goal: ![geozy](https://github.com/ChironEn/geozy.png)  
+goal: ![geozy](https://github.com/ChironEn/GeoZy/blob/master/geozy.png)  
 
 
 
