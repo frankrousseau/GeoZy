@@ -1,8 +1,12 @@
 ## GeoZy webapp development
-*simple tool for creating, sharing pin-point*
+** STATU: NOT READY TO USE **  
+*simple tool for creating, sharing pin-point*  
 
-* creating a support
+atm: white page with title
 
+
+#### rendering a layout with a map
+* using react and node.js
 
 ### Testing Geojsonapp By Mick
 https://github.com/mick/geojsonapp  

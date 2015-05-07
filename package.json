@@ -1,0 +1,39 @@
+{
+  "name": "GeoZy",
+  "version": "0.0.1",
+  "description": "simple tool for creating, sharing pin-point.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChironEn/GeoZy.git"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "express": "~3.4.0",
+    "jade": "~0.35.0",
+    "React": "git://github.com/facebook/react.git",
+    "optimist": "0.6.0",
+    "react-page-middleware": "git://github.com/reactjs/react-page-middleware.git",
+    "connect": "2.8.3",
+    "dnode": "^1.2.0",
+    "electron-prebuilt": "^0.25.1",
+    "geojson-extent": "^0.3.1",
+    "geojson-normalize": "0.0.0",
+    "mapbox-gl": "^0.7.0",
+    "mapbox.js": "^2.1.8",
+    "minimist": "^0.2.0",
+    "react-bootstrap": "0.21.2"
+
+  },
+  "author": {
+    "name": "RobyRemzy",
+    "email": "RobyRemZy@openmailbox.org",
+    "url": "https://github.com/RobyRemzy"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+
+  "scripts": {
+    "start": "node server.js"
+  }
+}
