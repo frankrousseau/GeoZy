@@ -13,3 +13,9 @@ https://github.com/mick/geojsonapp
 https://www.npmjs.com/package/geojsonapp
 * sending requests to geojsonapp with a search box
 * sending requests to geojsonapp by sending a request with `.geojson` files  
+
+### IT'S A MESS!!!
+
+`$ npm install`  
+`node server.js`  
+`# open http://localhost:8080/index.html `
