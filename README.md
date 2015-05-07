@@ -2,7 +2,9 @@
 **STATUS: NOT READY TO USE**  
 *simple tool for creating, sharing pin-point*  
 
-atm: white page with title
+atm: white page with title  
+goal: ![geozy](https://github.com/ChironEn/geozy.png)  
+
 
 
 #### rendering a layout with a map
