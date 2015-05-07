@@ -1,5 +1,5 @@
 ## GeoZy webapp development
-** STATU: NOT READY TO USE **  
+**STATUS: NOT READY TO USE**  
 *simple tool for creating, sharing pin-point*  
 
 atm: white page with title
