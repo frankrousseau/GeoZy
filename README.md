@@ -6,7 +6,9 @@
 **atm:**
 * white page with upper panel
 * map not rendering see `/elements/map/ZeMap.js` and `src/main.js`  
-**goal:**    
+
+**goal:**  
+
  ![geozy](https://github.com/ChironEn/GeoZy/blob/master/geozy.png)  
 
 
