@@ -1,31 +1,27 @@
 /**
  * my GeoZy map
  */
-"use strict";
-
 var React = require('React');
-var path = React.DOM.path;
-//var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-
 
 /**
- * An animated panel component. hidden to slide in
+ * MAP
  */
 var ZeMap = React.createClass({
-  getInitialState: function() {
-    return {initialized: true};
-  },
-
-  componentDidMount: function() {
-    this.setState({initialized: true});
-  },
-
   render: function() {
-    var classes = [
-      'ZeMap',
+    return (
+      <html>
+        <head>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.7.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.7.0/mapbox-gl.css' rel='stylesheet' />
+        </head>
 
-    ].join(' ');
-
-  },
+        <body>
+        <div id='map'></div>
+        <script src='src/main.js'></script>
+        </body>
+      </html>
+    );
+  }
 });
+
 module.exports = ZeMap;
