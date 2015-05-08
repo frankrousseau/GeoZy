@@ -1,11 +1,13 @@
 ## GeoZy webapp development
+*simple tool for creating, sharing pin-point*
 **STATUS: NOT READY TO USE**  
-*simple tool for creating, sharing pin-point*  
 
-atm:
+
+**atm:**
 * white page with upper panel
-* map not rendering see `/elements/map/ZeMap.js` and `src/main.js`
-goal: ![geozy](https://github.com/ChironEn/GeoZy/blob/master/geozy.png)  
+* map not rendering see `/elements/map/ZeMap.js` and `src/main.js`  
+**goal:**    
+ ![geozy](https://github.com/ChironEn/GeoZy/blob/master/geozy.png)  
 
 
 
