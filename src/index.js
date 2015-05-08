@@ -3,6 +3,7 @@
  */
 
 var Banner = require('./elements/Banner/Banner.js');
+var UpperPanel = require('./elements/upperpanel/UpperPanel.js');
 var React = require('React');
 var SiteBoilerPlate = require('./core/SiteBoilerPlate.js');
 //var VectorWidget = require('./elements/VectorWidget/VectorWidget.js');
@@ -12,7 +13,9 @@ var index = React.createClass({
   render: function() {
     return (
       <SiteBoilerPlate>
-      <Banner bannerMessage="GeoZy"/>
+      <UpperPanel bannerMessage="GeoZy"/>
+
+
 
     </SiteBoilerPlate>
   );

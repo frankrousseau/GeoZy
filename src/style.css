@@ -31,3 +31,22 @@ h3.banner.fadeIn {
   opacity: 0.8;
   transition: opacity 3s ease-in;
 }
+
+h3.UpperPanel {
+  opacity: 0;
+  font-family: Helvetica;
+  color: #A789E0;
+  background-color: #C8BDD4;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: left;
+  -webkit-user-select: none;
+  font-size: 5vh; /* Chrome bug prevents resizing on window resize! */
+  width: 100%;    /* Putting width 100% causes repaint on resize */
+}
+
+h3.UpperPanel.slideIn {
+  opacity: 1;
+  transition: opacity 3s ease-in;
+}
