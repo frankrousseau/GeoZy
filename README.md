@@ -1,5 +1,5 @@
 ## GeoZy webapp development
-*simple tool for creating, sharing pin-point*
+*simple tool for creating, sharing pin-point*  
 **STATUS: NOT READY TO USE**  
 
 
