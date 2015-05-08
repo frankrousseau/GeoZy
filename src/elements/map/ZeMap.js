@@ -23,15 +23,9 @@ var ZeMap = React.createClass({
   render: function() {
     var classes = [
       'ZeMap',
-      this.state.initialized: true
+
     ].join(' ');
-    return (
 
-
-      <a img="./map.png"/a>
-
-
-    );
   },
 });
 module.exports = ZeMap;
