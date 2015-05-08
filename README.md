@@ -2,7 +2,9 @@
 **STATUS: NOT READY TO USE**  
 *simple tool for creating, sharing pin-point*  
 
-atm: white page with title  
+atm:
+* white page with upper panel
+* map not rendering see `/elements/map/ZeMap.js` and `src/main.js`
 goal: ![geozy](https://github.com/ChironEn/GeoZy/blob/master/geozy.png)  
 
 
