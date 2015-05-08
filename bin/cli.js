@@ -9,17 +9,17 @@ var net = require('net');
 
 //check to see if geojson.app is running. if not start it.
 
-var startingApp = false;
+var startingApp = true;
 var retry = 0;
 
 function connect() {
-    net.connect(5004, function(err){
+    net.connect(8080, function(err){
         if(err) console.error(err);
         remoteCommands();
     }).on('error', function(e) {
 
         if(!startingApp) {
-            var child = proc.spawn(electron, [__dirname+'/../'], {detached:true});
+            var child = proc.spawn(electron, [__dirname+'/../'], {detached:false});
             startingApp = true;
             return setTimeout(connect, 400).unref();
         }
@@ -34,7 +34,7 @@ function connect() {
 connect();
 
 function remoteCommands() {
-    var d = dnode.connect(5004);
+    var d = dnode.connect(8080);
     d.on('remote', function (remote) {
 
         var data = '';

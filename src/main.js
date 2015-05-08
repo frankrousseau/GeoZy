@@ -15,7 +15,7 @@ var server = dnode({
         cb();
     }
 }, {weak:false});
-server.listen(5004);
+server.listen(8080);
 
 var layers = [];
 

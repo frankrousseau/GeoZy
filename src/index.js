@@ -15,8 +15,8 @@ var index = React.createClass({
     return (
       <SiteBoilerPlate>
       <UpperPanel bannerMessage="GeoZy"/>
+      <ZeMap />
 
-        <ZeMap />
 
 
     </SiteBoilerPlate>
