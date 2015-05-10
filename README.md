@@ -5,7 +5,7 @@
 
 **atm:**
 * white page with upper panel
-* map not rendering see `/elements/map/ZeMap.js` and `src/main.js`  
+* map not rendering    
 
 **goal:**  
 
@@ -23,7 +23,7 @@
 05/10/2015 unsucessfull with:
 * [geojsonapp](https://github.com/mick/geojsonapp) and [npm](https://www.npmjs.com/package/geojsonapp)  
 
-  
+
 05/11/2015 testing with:  
 * [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js)
 * [node-mapbox-gl-native](https://github.com/mapbox/node-mapbox-gl-native)
