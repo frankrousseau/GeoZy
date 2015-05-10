@@ -15,15 +15,19 @@
 
 #### rendering a layout with a map
 * using react and node.js
+* sending requests to geo app with a search box
+* sending requests to geo app by sending a request with `.geojson` files
 
-### Testing Geojsonapp By Mick
-https://github.com/mick/geojsonapp  
-https://www.npmjs.com/package/geojsonapp
-* sending requests to geojsonapp with a search box
-* sending requests to geojsonapp by sending a request with `.geojson` files  
+### Testing Geo Apps
+
+05/10/2015 unsucessfull with:
+* [geojsonapp](https://github.com/mick/geojsonapp) and [npm](https://www.npmjs.com/package/geojsonapp)
+05/11/2015 testing with:  
+* [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js)
+* [node-mapbox-gl-native](https://github.com/mapbox/node-mapbox-gl-native)
 
 ### IT'S A MESS!!!
 
 `$ npm install`  
 `node server.js`  
-`# open http://localhost:8080/index.html `
+`# open http://localhost:1337/index.html `
