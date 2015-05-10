@@ -40,7 +40,6 @@ var SiteBoilerPlate = React.createClass({
                 />
                 <link rel="stylesheet" type="text/css" href="/style.css" />
         </head>
-
         <body>
           {this.props.children}
 

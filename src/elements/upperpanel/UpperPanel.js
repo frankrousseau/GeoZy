@@ -23,13 +23,14 @@ var UpperPanel = React.createClass({
   render: function() {
     var classes = [
       'UpperPanel',
-      this.state.initialized ? 'slideIn' : ''
+      this.state.initialized ? 'fadeIn' : ''
     ].join(' ');
     return (
 
-      
+
       <h3 className={classes}>
-        {this.props.bannerMessage}
+        {this.props.upperpanel}
+        <div>GeoZy</div>
       </h3>
 
 
