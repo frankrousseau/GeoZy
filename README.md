@@ -5,7 +5,7 @@
 
 **atm:**
 * white page with upper panel
-* map not rendering    
+* map not rendering
 
 **goal:**  
 
@@ -25,7 +25,7 @@
 
 
 05/11/2015 testing with:  
-* [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js)
+* [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js) pkg: `"node-mapbox-gl-native": "1.0.3"`
 * [node-mapbox-gl-native](https://github.com/mapbox/node-mapbox-gl-native)
 
 ### IT'S A MESS!!!

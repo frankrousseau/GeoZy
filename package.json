@@ -13,8 +13,8 @@
     "optimist": "0.6.0",
     "react-page-middleware": "git://github.com/reactjs/react-page-middleware.git",
     "connect": "2.8.3",
-    "react-bootstrap": "0.21.2",
-    "node-mapbox-gl-native": "1.0.3"
+    "react-bootstrap": "0.21.2"
+
 
   },
   "author": {
