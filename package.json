@@ -1,32 +1,41 @@
 {
   "name": "GeoZy",
   "version": "0.0.1",
-  "description": "simple tool for creating, sharing pin-point.",
+  "description": "simple tool for rendering .geojson files with MapBox",
+  "main": "server.js",
+  "bin": {
+    "my-places": "bin/my-places"
+  },
+  "scripts": {
+    "build": "coffee -cb -o build server* && cd client && npm run-script build && cd .. && mkdir -p build/client && cp -r client/public build/client",
+    "test": "mocha test",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ChironGizmo/GeoZy.git"
   },
-  "main": "index.js",
+  "keywords": [
+    "zeroconfig",
+    "self-hosting",
+    "single-page",
+    "app",
+    "mapbox",
+    "npm",
+    "cozy",
+    "cloud"
+  ],
+  "author": "RobyRemzy",
+  "license": "MIT",
+  "homepage": "https://github.com/ChironGizmo/GeoZy-EX",
+  "bugs": {
+    "url": "https://github.com/ChironGizmo/GeoZy-EX/issues",
   "dependencies": {
-    "express": "~3.4.0",
-    "React": "git://github.com/facebook/react.git",
-    "optimist": "0.6.0",
-    "react-page-middleware": "git://github.com/reactjs/react-page-middleware.git",
-    "connect": "2.8.3",
-    "react-bootstrap": "0.21.2"
-
-
-  },
-  "author": {
-    "name": "RobyRemzy",
-    "license": "MIT",
-    "url": "https://github.com/ChironGizmo/GeoZy/issues"
-  },
-  "engines": {
-    "node": "~0.8.0"
-  },
-
-  "scripts": {
-    "start": "node server.js"
+    "path-extra": "^1.0.2",
+    "americano": "^0.4.1",
+    "cozy-db-pouchdb": "0.0.13",
+    "pouchdb": "^3.5.0",
+    "async": "^0.9.0"
+    }
   }
 }

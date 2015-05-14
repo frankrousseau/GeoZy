@@ -1,6 +1,7 @@
 client/public/browser-bundle.js
 node_modules
-npm-debug.log
 *~
 *.swp
-db
+my-bookmarks-db
+my-places-db
+build
