@@ -27,15 +27,12 @@
   ],
   "author": "RobyRemzy",
   "license": "MIT",
-  "homepage": "https://github.com/ChironGizmo/GeoZy-EX",
-  "bugs": {
-    "url": "https://github.com/ChironGizmo/GeoZy-EX/issues",
   "dependencies": {
     "path-extra": "^1.0.2",
     "americano": "^0.4.1",
     "cozy-db-pouchdb": "0.0.13",
     "pouchdb": "^3.5.0",
     "async": "^0.9.0"
-    }
+
   }
 }
