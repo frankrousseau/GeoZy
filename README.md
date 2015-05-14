@@ -17,7 +17,7 @@ sudo npm install coffee-script -g
 Then,  
 ```
 git clone https://github.com/ChironGizmo/GeoZy
-cd Geozy
+cd GeoZy
 sudo npm install
 coffee server.coffee
 open http://localhost:9240
