@@ -2,4 +2,5 @@ node_modules
 *~
 *.swp
 db
+npm-debug.log
 *.coffee
