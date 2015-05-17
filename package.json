@@ -19,6 +19,11 @@
     "zeroconfig",
     "self-hosting",
     "single-page",
+<<<<<<< HEAD
+    "app"
+  ],
+  "author": "Chiron Gizmo",
+=======
     "app",
     "mapbox",
     "npm",
@@ -26,6 +31,7 @@
     "cloud"
   ],
   "author": "RobyRemzy",
+>>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
   "license": "MIT",
   "dependencies": {
     "path-extra": "^1.0.2",
@@ -33,6 +39,9 @@
     "cozy-db-pouchdb": "0.0.13",
     "pouchdb": "^3.5.0",
     "async": "^0.9.0"
+<<<<<<< HEAD
+=======
 
+>>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
   }
 }
