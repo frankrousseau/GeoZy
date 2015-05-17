@@ -2,8 +2,5 @@ node_modules
 *~
 *.swp
 db
-<<<<<<< HEAD
-=======
 npm-debug.log
->>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
 *.coffee

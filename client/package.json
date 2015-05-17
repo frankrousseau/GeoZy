@@ -1,20 +1,10 @@
 {
-<<<<<<< HEAD
   "name": "GeoZy-client",
   "version": "0.0.1",
-  "description": "Client for GeoZy.",
+  "description": "Client for GeoZyn.",
   "main": "src/index.coffee",
   "dependencies": {
     "react": "^0.13.1",
-=======
-  "name": "my-bookmarks-client",
-  "version": "0.0.1",
-  "description": "Client for My Bookmarks application.",
-  "main": "src/index.coffee",
-  "dependencies": {
-    "react": "^0.13.1",
-    "slug": "^0.8.0",
->>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
     "superagent": "^1.1.0"
   },
   "devDependencies": {
@@ -31,11 +21,7 @@
     "build-min": "NODE_ENV=production ./node_modules/.bin/browserify -t coffeeify . | ./node_modules/.bin/uglifyjs -cm > ./public/browser-bundle.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
-  "author": "Chiron Gozmo",
-=======
-  "author": "Cozy Cloud",
->>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
+  "author": "Chiron Gizmo",
   "license": "MIT",
   "browserify": {
     "transform": [

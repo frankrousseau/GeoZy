@@ -2,10 +2,7 @@ client/public/browser-bundle.js
 node_modules
 *~
 *.swp
-<<<<<<< HEAD
-=======
 npm-debug.log
->>>>>>> 571115d9dee1f2db4a2f0821a13f948e2df947da
 my-bookmarks-db
 my-places-db
 build
