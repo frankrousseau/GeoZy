@@ -1,7 +1,7 @@
 {
   "name": "GeoZy-client",
   "version": "0.0.1",
-  "description": "Client for GeoZyn.",
+  "description": "Client for GeoZy.",
   "main": "src/index.coffee",
   "dependencies": {
     "react": "^0.13.1",
