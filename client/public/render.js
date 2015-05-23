@@ -1,4 +1,5 @@
-// render call into divs map, listings
+// render call into divs map, listings //
+
 
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ieXJlbXp5IiwiYSI6InBTSzNKZWMifQ.q-4jrI_7B-3Cjv8nPVimgg';
 var geojson = [
