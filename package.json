@@ -1,6 +1,6 @@
 {
-  "name": "GeoZy",
-  "version": "0.0.1",
+  "name": "geozy",
+  "version": "1.0.1",
   "description": "simple tool for rendering .geojson files with MapBox",
   "main": "server.js",
   "bin": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChironGizmo/GeoZy.git"
+    "url": "git+ssh://git@github.com/ChironGizmo/GeoZy.git"
   },
   "keywords": [
     "zeroconfig",
@@ -23,6 +23,10 @@
   ],
   "author": "Chiron Gizmo",
   "license": "MIT",
+  "bugs": {
+  "url": "https://github.com/ChironGizmo/GeoZy/issues"
+},
+  "homepage": "https://github.com/ChironGizmo/GeoZy#readme",
   "dependencies": {
     "path-extra": "^1.0.2",
     "americano": "^0.4.1",
