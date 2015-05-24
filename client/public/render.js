@@ -1,5 +1,5 @@
 // render call into divs map, listings //
-
+//require('mapbox.js');
 
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ieXJlbXp5IiwiYSI6InBTSzNKZWMifQ.q-4jrI_7B-3Cjv8nPVimgg';
 var geojson = [
@@ -92,6 +92,7 @@ map.scrollWheelZoom.enable();
 var listings = document.getElementById('listings');
 var locations = L.mapbox.featureLayer().addTo(map);
 
+// call the var geojson above
 locations.setGeoJSON(geojson);
 
 function setActive(el) {
