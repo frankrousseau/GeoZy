@@ -2,7 +2,6 @@ React = require 'react'
 request = require 'superagent'
 {div, p, a, button, input, label} = React.DOM
 
-
 # Utilitaires pour requêter notre serveur.
 data =
 
@@ -140,7 +139,7 @@ Bookmark = React.createFactory React.createClass
                 ,
                     @props.link
             p
-                button onClick: @onDeleteClicked, "X"
+                button onClick: @onDeleteClicked, "x"
 
 
 # Ici on démarre !
@@ -157,4 +156,3 @@ data.getBookmarks (err, bookmarks) ->
         # directement à l'élément body.
         React.render(React.createElement(App , bookmarks: bookmarks),
                      document.getElementById('app'))
-
