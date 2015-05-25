@@ -3,7 +3,7 @@
 }
 
 body {
-  color:#404040;
+  color:#d8dc07;
   font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
   background:#404040;
   margin:0;
@@ -18,7 +18,7 @@ body {
 
 .sidebar {
   position:absolute;
-  width:33.3333%;
+  width:23%;
   height:100%;
   top:0;left:0;
   overflow:hidden;
@@ -29,6 +29,7 @@ body {
 }
 .heading {
   background:#fff;
+  color: #555555;
   border-bottom:1px solid #eee;
   height:60px;
   line-height:60px;
@@ -74,8 +75,8 @@ body {
 
 .map {
   position:absolute;
-  left:33.3333%;
-  width:66.6666%;
+  left:23%;
+  width:77%;
   top:0;bottom:0;
 }
 
