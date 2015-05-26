@@ -147,7 +147,7 @@ locations.eachLayer(function(locale) {
 var prop = locale.feature.properties;
 
 // marker popup on the map.
-var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + '<br />' + prop.postalCode + ' ' + prop.city + ' <br /> ' + prop.tag;
+var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + '<br />' + prop.postalCode + ' ' + prop.city;
 
 var listing = listings.appendChild(document.createElement('div'));
 listing.className = 'item';
@@ -159,17 +159,21 @@ link.className = 'title';
 // listing display
 link.innerHTML = '<large class="hot">' + prop.label + '</large><br />' + prop.address + ' ' + prop.postalCode + ' ' + prop.city + ' ' + prop.country;
 if (prop.website) {
-link.innerHTML += '<br /><small>' + prop.website + '</small>';
-popup += '<br /><small class="quiet">' + prop.website + '<br />' + prop.email + '</small>';
+popup += '<br /><small class="quiet">' + '<a href="' + prop.website + '" target="_blank">' + prop.website + '</a>' + '<br />' + prop.email + '</small>';
+if (prop.tag) {
+link.innerHTML += '<br><small class="tagz">' + prop.tag + '</small>';
+  }
 }
 
 var details = listing.appendChild(document.createElement('div'));
-details.innerHTML = prop.tag;
+if (prop.website) {
+details.innerHTML +=  '<small>' + '<a href="' + prop.website + '" target="_blank">' + prop.website + '</a>' + '</small>';
 if (prop.email) {
-details.innerHTML += ' &middot; ' + prop.email;
+details.innerHTML += '<small class="quiet">' + ' &middot; ' + prop.email + '</small>';
 if (prop.phone) {
-  details.innerHTML += ' &middot; ' + prop.phone;
-}
+details.innerHTML += '<small class="quiet">' + ' &middot; ' + prop.phone + '</small>';
+    }
+  }
 }
 
 link.onclick = function() {

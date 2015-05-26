@@ -56,10 +56,10 @@ body {
 .listings .item .title {
   display:block;
   color:#555555;
-  font-weight:700;
+
 }
-.listings .item .title small { font-size:13px; }
-.listings .item .title large { font-size:18px; }
+.listings .item .title small { font-size:13px; font-weight:400;}
+.listings .item .title large { font-size:18px; font-weight:700; }
 .listings .item.active .title { background-color:lightblue; }
 .listings .item:hover { background-color:#FFC47F; }
 .listings .item.active {
@@ -100,6 +100,10 @@ body {
 }
 .hot {
   color:#fe8800;
+}
+}
+.tagz {
+  color:#34A6FF;
 }
 a {
     color:#404040;
