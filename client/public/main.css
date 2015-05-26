@@ -2,9 +2,11 @@
   boxSizing: border-box;
 }
 
+
+
 body {
-  color:#d8dc07;
-  font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  color:#5a0e6d;
+  font:400 15px/22px 'Source Sans Pro';
   background:#404040;
   margin:0;
   padding:0;
@@ -22,6 +24,7 @@ body {
   height:100%;
   top:0;left:0;
   overflow:hidden;
+  background: lightgrey;
   border-right:1px solid rgba(0,0,0,0.25);
 }
 .pad2 {
@@ -29,11 +32,13 @@ body {
 }
 .heading {
   background:#fff;
-  color: #555555;
+  font: 32px 'Source Sans Pro';
+  font-weight:700;
+  color: #34A6FF;
   border-bottom:1px solid #eee;
   height:60px;
   line-height:60px;
-  padding:0 10px;
+  padding:0 60px;
 }
 .listings {
   height:100%;
@@ -41,6 +46,7 @@ body {
   padding-bottom:60px;
 }
 .listings .item {
+  color: #555555;
   display:block;
   border-bottom:1px solid #eee;
   padding:10px;
@@ -49,14 +55,15 @@ body {
 .listings .item:last-child { border-bottom:none; }
 .listings .item .title {
   display:block;
-  color:#00853e;
+  color:#555555;
   font-weight:700;
 }
-.listings .item .title small { font-weight:400; }
-.listings .item.active .title,
-.listings .item .title:hover { color:#8cc63f; }
+.listings .item .title small { font-size:13px; }
+.listings .item .title large { font-size:18px; }
+.listings .item.active .title { background-color:lightblue; }
+.listings .item:hover { background-color:#FFC47F; }
 .listings .item.active {
-  background-color:#f8f8f8;
+  background-color:lightblue;
 }
 
   ::-webkit-scrollbar {
@@ -69,7 +76,7 @@ body {
     background:none;
 }
   ::-webkit-scrollbar-thumb {
-    background:#00853e;
+    background:lightblue;
     border-radius:0;
 }
 
@@ -91,10 +98,8 @@ body {
 .quiet {
   color:#888;
 }
-h1 {
-    font-size:22px;
-    margin:0;
-    font-weight:400;
+.hot {
+  color:#fe8800;
 }
 a {
     color:#404040;
@@ -107,7 +112,7 @@ a:hover { color:#101010; }
       display:none;
     }
     .leaflet-popup-content {
-      font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      font:400 15px/22px 'Source Sans Pro';
       padding:0;
       width:200px;
     }
@@ -115,8 +120,8 @@ a:hover { color:#101010; }
       padding:0;
     }
     .leaflet-popup-content h3 {
-      background:#91c949;
-      color:#fff;
+      background:lightblue;
+      color:#fe8800;
       margin:0;
       display:block;
       padding:10px;

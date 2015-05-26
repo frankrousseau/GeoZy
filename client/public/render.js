@@ -8,7 +8,6 @@
 
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ieXJlbXp5IiwiYSI6InBTSzNKZWMifQ.q-4jrI_7B-3Cjv8nPVimgg';
 var geojson = [
-
   {
     "type": "FeatureCollection",
     "features": [
@@ -34,6 +33,37 @@ var geojson = [
           "tag": "tag"
         }
       },
+      {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.381758689880371,
+          48.864848860752446
+        ]
+      },
+      "properties": {
+        "label": "La Fine Mousse",
+        "address": "6 et 4bis avenue Jean Aicard",
+        "postalCode": "75011",
+        "city": "Paris",
+        "state": "",
+        "country": "France",
+        "phone": "+33 1 48 06 40 94",
+        "email": "foo@bar.io",
+        "website": "http://www.lafinemousse.fr/",
+        "note": "all week 17:00/02:00",
+        "marker-color": "",
+        "marker-size": "",
+        "marker-symbol": "",
+        "tag": "bar, biere, french"
+      }
+    },
+  ]
+}
     ]
   }
 ];
@@ -117,7 +147,7 @@ locations.eachLayer(function(locale) {
 var prop = locale.feature.properties;
 
 // marker popup on the map.
-var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + '<br />' + prop.postalCode + ' ' + prop.city + ' : ' + prop.tag;
+var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + '<br />' + prop.postalCode + ' ' + prop.city + ' <br /> ' + prop.tag;
 
 var listing = listings.appendChild(document.createElement('div'));
 listing.className = 'item';
@@ -127,10 +157,10 @@ link.href = '#';
 link.className = 'title';
 
 // listing display
-link.innerHTML = prop.label + '<br />' + prop.address + ' ' + prop.postalCode + ' ' + prop.city + ' ' +prop.country;
+link.innerHTML = '<large class="hot">' + prop.label + '</large><br />' + prop.address + ' ' + prop.postalCode + ' ' + prop.city + ' ' + prop.country;
 if (prop.website) {
-link.innerHTML += '<br /><small class="quiet">' + 'WebSite: ' + prop.website + '</small>';
-popup += '<br /><small class="quiet">' + prop.website + '</small>' + '<br /><small class="quiet">' + prop.email + '</small>';
+link.innerHTML += '<br /><small>' + prop.website + '</small>';
+popup += '<br /><small class="quiet">' + prop.website + '<br />' + prop.email + '</small>';
 }
 
 var details = listing.appendChild(document.createElement('div'));
