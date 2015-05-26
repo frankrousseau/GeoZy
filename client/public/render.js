@@ -147,7 +147,7 @@ locations.eachLayer(function(locale) {
 var prop = locale.feature.properties;
 
 // marker popup on the map.
-var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + '<br />' + prop.postalCode + ' ' + prop.city;
+var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + ' ' + prop.postalCode + ' ' + prop.city;
 
 var listing = listings.appendChild(document.createElement('div'));
 listing.className = 'item';
