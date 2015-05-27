@@ -9,6 +9,12 @@ short terms:
 * add a tool to creat/edit the listings files properties
 * enable search by tag/label or all properties
 
+### Documentations
+[http://leafletjs.com/reference.html](http://leafletjs.com/reference.html)  
+[https://www.mapbox.com/mapbox.js/example/v1.0.0/](https://www.mapbox.com/mapbox.js/example/v1.0.0/)  
+[https://www.mapbox.com/mapbox.js/api/v2.1.9/](https://www.mapbox.com/mapbox.js/api/v2.1.9/)  
+[http://geojson.org/](http://geojson.org/)  
+[https://github.com/cozy](https://github.com/cozy)  
 
 ### How to Use and Install
 
