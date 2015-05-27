@@ -119,6 +119,24 @@ function showPolygonArea(e) {
   e.layer.openPopup();
 }
 
+
+
+
+
+// module pour récuper les infos Lat long du point cliker sur la carte
+var coordinates = document.getElementById('coordinates');
+
+map.on('click', function(e) {
+  var m = (e.latlng);
+  coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />Longitude: ' + m.lng;
+});
+
+
+
+
+
+
+
 map.scrollWheelZoom.enable();
 
 

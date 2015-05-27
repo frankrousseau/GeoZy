@@ -15,12 +15,14 @@
 
   <!-- fusion of app Bookmark and geojson listings (may move main CSS to ./styles/main.css or .styl??) -->
   <div class='sidebar'>
+  <script src='./client/src/sidebar.coffee'></script>
     <div id='app'></div>
     <div class='heading'>my places</div>
     <div id='listings' class='listings'></div>
   </div>
 
   <div id='map' class='map'> </div>
+  <pre id='coordinates' class='ui-coordinates'></pre>
   <!-- option 'need for locatecontrole leaflet' CDN font awesome (not use for production) -->
   <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
   <!-- option?? Leaflet plugin (may not use for production) -->
@@ -30,6 +32,7 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
   <!-- scripts JS -->
     <script src='render.js'></script>
     <script src='browser-bundle.js'></script>
