@@ -4,10 +4,10 @@
 It should be a portage of [GeoZy-Ex](https://github.com/ChironGizmo/GeoZy-EX) into CoffeeScript based on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/blob/master/server.coffee), to ultimately being deployed on a  CozyCloud instance.
 
 ### ToDo
-short terms: 
-* add a marker and be enable to save/edit the geojson properties
+short terms:
+* add a marker and be enable to save/edit as geojson with properties
 * add a tool to creat/edit the listings files properties
-* enable search by tag/label properties
+* enable search by tag/label or all properties
 
 
 ### How to Use and Install
