@@ -5,8 +5,9 @@
 //require('geojson-extent');
 //require('geojson-normalize');
 
-
+// mapbox token
 L.mapbox.accessToken = 'pk.eyJ1Ijoicm9ieXJlbXp5IiwiYSI6InBTSzNKZWMifQ.q-4jrI_7B-3Cjv8nPVimgg';
+// examples of .geojson files
 var geojson = [
   {
     "type": "FeatureCollection",
@@ -68,29 +69,32 @@ var geojson = [
   }
 ];
 
-// Features of the map
-var map = L.mapbox.map('map', null).setView([48.857671288923, 2.352084142948], 13)
+// Features of the map on div map
+var map = L.mapbox.map('map', null)
 .addControl(L.mapbox.geocoderControl('mapbox.places', {
     autocomplete: true
 }));
 
-L.control.locate({
-
-}).addTo(map);
-
+// define the opening map view
+map.setView([48.857671288923, 2.352084142948], 13);
+// enable to scroll on wheel (already ok with double click)
+map.scrollWheelZoom.enable();
+// add leaflet tool to "set view" where you are
+L.control.locate().addTo(map);
+// add leaflet tool to enable map full screeen
 L.control.fullscreen().addTo(map);
-
+// add multi layer of maps types with the burger icone
 var layers = {
     Streets: L.mapbox.tileLayer('examples.map-i87786ca'),
     OpenStreetMap: L.mapbox.tileLayer('examples.ik7djhcc'),
     Satellite: L.mapbox.tileLayer('examples.map-igb471ik')
 };
-
-layers.Streets.addTo(map);
 L.control.layers(layers).addTo(map);
+// set the default map layer
+layers.Streets.addTo(map);
 
+// testing editing layers with tools mostly here with polygone tool
 var featureGroup = L.featureGroup().addTo(map);
-
 var drawControl = new L.Control.Draw({
   edit: {
     featureGroup: featureGroup
@@ -115,51 +119,38 @@ function showPolygonAreaEdited(e) {
 function showPolygonArea(e) {
   featureGroup.clearLayers();
   featureGroup.addLayer(e.layer);
-  e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
+  e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>' + '<br />save it');
   e.layer.openPopup();
 }
 
-
-
-
-
-// module pour récuper les infos Lat long du point cliker sur la carte
+// testing get lat/long with mouse event
 var coordinates = document.getElementById('coordinates');
 
-map.on('click', function(e) {
+map.on('mousemove', function(e) {
   var m = (e.latlng);
   coordinates.innerHTML = 'Latitude: ' + m.lat + '<br />Longitude: ' + m.lng;
 });
 
-
-
-
-
-
-
-map.scrollWheelZoom.enable();
-
-
+// testing creat a new contextmenu
+map.on('contextmenu', function(e) {
+});
 
 // Listing of the geojson files and show them on map
 var listings = document.getElementById('listings');
 var locations = L.mapbox.featureLayer().addTo(map);
-
-// call the var geojson above
+// call the var geojson above on top
 locations.setGeoJSON(geojson);
-
+// active rendering on listings
 function setActive(el) {
 var siblings = listings.getElementsByTagName('div');
 for (var i = 0; i < siblings.length; i++) {
   siblings[i].className = siblings[i].className
   .replace(/active/, '').replace(/\s\s*$/, '');
 }
-
 el.className += ' active';
 }
-
+// general focus and redering on events over listings
 locations.eachLayer(function(locale) {
-
 // Shorten locale.feature.properties to just `prop` so we're not
 // writing this long form over and over again.
 var prop = locale.feature.properties;
@@ -215,5 +206,4 @@ setActive(listing);
 
 popup += '</div>';
 locale.bindPopup(popup);
-
 });
