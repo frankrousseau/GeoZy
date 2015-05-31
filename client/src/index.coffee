@@ -62,7 +62,7 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: 'address'},
                 @state.address
 
-var MyPlaceComponent = React.createFactory(require('MyPlaceComponent'));
+
 
 # C'est le composant principal de l'application.
 MyPlaceComponent = React.createClass
