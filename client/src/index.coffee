@@ -1,83 +1,8 @@
 React = require 'react'
-{div, p, a, button, input, label, h1} = React.DOM
+{div} = React.DOM
 
-
-SideBar = React.createFactory React.createClass
-
-    # Ici on assure le rendu de ce composant.
-    render: ->
-        div id: 'sidebar',
-            h1 id: "title", 'My Places'
-            # Ici c'est un composant spécifique que nous avons créé.
-            BookmarkListComponent
-                bookmarkDatas: @props.bookmarkDatas
-
-
-# Le composant liste de bookmark.
-BookmarkListComponent = React.createFactory React.createClass
-
-    # On définit l'état initial du composant bookmarks, cela est utile pour le
-    # rendu dynamique. En effet on lui indique par cet état la liste des
-    # bookmarks à afficher. Il suffira de changer cette liste pour que le rendu
-    # se déclenche et que l'écran soit mis à jour en fonction.
-    getInitialState: ->
-        return bookmarkDatas: @props.bookmarkDatas
-
-
-    # Rendu du composant.
-    render: ->
-
-        div id: "bookmark-list",
-            # Ici on génère un composant bookmark par bookmark présentes
-            # dans la liste. La fonction map permet de constituer un
-            # tableau de composant bookmark à partir d'une liste de
-            # d'objet bookmark.
-            @getBookmarkComponents()
-
-    getBookmarkComponents: ->
-        bookmarkComponents = []
-        for bookmarkData in @state.bookmarkDatas
-            bookmarkComponent = BookmarkComponent
-                label: bookmarkData.features[0].properties.label
-                address: bookmarkData.features[0].properties.address
-            bookmarkComponents.push bookmarkComponent
-        return bookmarkComponents
-
-
-
-# Le composant qui va définir une ligne de bookmark.
-BookmarkComponent = React.createFactory React.createClass
-
-    getInitialState: ->
-        return {
-            label: @props.label
-            address: @props.address
-        }
-
-    # Rendu de la bookmark, on
-    render: ->
-        div null,
-            p {className: "label"},
-                @state.label
-            p {className: 'address'},
-                @state.address
-
-
-
-# C'est le composant principal de l'application.
-MyPlaceComponent = React.createClass
-
-    # Ici on assure le rendu de ce composant.
-    render: ->
-        div className: 'main',
-            # Ici c'est un composant spécifique que nous avons créé.
-            SideBar
-               bookmarkDatas: @props.bookmarkDatas
-
-
-
-# Pour l'instant on ne va pas sur le serveur.
-#
+SideBar = require './sidebar.coffee'
+MapBox = require './mapbox.coffee'
 
 
 # Met tes données de départ ici !
@@ -137,7 +62,23 @@ bookmarkDatas = [
 ]
 
 
-data = bookmarkDatas: bookmarkDatas
-React.render(React.createElement(MyPlaceComponent, data),
-             document.getElementById('app'))
+# C'est le composant principal de l'application.
+MyPlaceComponent = React.createClass
 
+    # Ici on assure le rendu de ce composant.
+    render: ->
+        div className: 'main',
+            # Ici c'est un composant spécifique que nous avons créé.
+            SideBar
+               bookmarkDatas: @props.bookmarkDatas
+            MapBox null, null
+
+
+# Ici on initialise l'application.
+initApp = ->
+    data = bookmarkDatas: bookmarkDatas
+    React.render(React.createElement(MyPlaceComponent, data),
+                 document.getElementById('app'))
+
+
+initApp()
