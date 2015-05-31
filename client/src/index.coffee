@@ -62,10 +62,10 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: 'address'},
                 @state.address
 
-
+var MyPlaceComponent = React.createFactory(require('MyPlaceComponent'));
 
 # C'est le composant principal de l'application.
-MyPlaceComonent = React.createClass
+MyPlaceComponent = React.createClass
 
     # Ici on assure le rendu de ce composant.
     render: ->
@@ -138,6 +138,12 @@ bookmarkDatas = [
             ]
     }
 ]
+
+
+# Ici on démarre !
+#
+# On récupère d'abord les bookmarks stockées sur le serveur.
+
 
 
 React.render(React.createElement(MyPlaceComponent , bookmarkDatas: bookmarkDatas),

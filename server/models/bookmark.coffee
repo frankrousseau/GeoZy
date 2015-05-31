@@ -5,7 +5,5 @@ cozydb = require 'cozy-db-pouchdb'
 # Ici c'est notr objet bookmark constitué de deux champs : le titre et le lien
 # de la bookmark.
 module.exports = Bookmark = cozydb.getModel 'Bookmark',
-
-module.exports = Bookmark = cozydb.getModel 'Event',
     title: type: String
     link: type: String

@@ -158,12 +158,12 @@ var prop = locale.feature.properties;
 // marker popup on the map.
 var popup = '<h3>' + prop.label + '</h3><div>' + prop.address + ' ' + prop.postalCode + ' ' + prop.city;
 
-var listing = listings.appendChild(document.createElement('div'));
-listing.className = 'item';
+//var listing = listings.appendChild(document.createElement('div'));
+//listing.className = 'item';
 
-var link = listing.appendChild(document.createElement('a'));
-link.href = '#';
-link.className = 'title';
+//var link = listing.appendChild(document.createElement('a'));
+//link.href = '#';
+//link.className = 'title';
 
 // listing display
 link.innerHTML = '<large class="hot">' + prop.label + '</large><br />' + prop.address + ' ' + prop.postalCode + ' ' + prop.city + ' ' + prop.country;
