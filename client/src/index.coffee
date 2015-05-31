@@ -1,4 +1,5 @@
 React = require 'react'
+#Sidebar = require 'sidebar'
 {div, p, a, button, input, label, h1} = React.DOM
 
 
