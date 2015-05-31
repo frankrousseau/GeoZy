@@ -2,7 +2,7 @@ React = require 'react'
 {div, p, a, button, input, label, h1} = React.DOM
 
 
-SideBar = React.createClass
+SideBar = React.createFactory React.createClass
 
     # Ici on assure le rendu de ce composant.
     render: ->
@@ -65,26 +65,23 @@ BookmarkComponent = React.createFactory React.createClass
 
 
 # C'est le composant principal de l'application.
-MyPlaceComonent = React.createClass
+MyPlaceComponent = React.createClass
 
     # Ici on assure le rendu de ce composant.
     render: ->
         div className: 'main',
             # Ici c'est un composant spécifique que nous avons créé.
             SideBar
-                bookmarkDatas: @props.bookmarkDatas
+               bookmarkDatas: @props.bookmarkDatas
 
 
 
-# Ici on démarre !
-#
-# On récupère d'abord les bookmarks stockées sur le serveur.
-# Attention le premier élément de react ne doit pas être attaché
-# directement à l'élément body.
+# Pour l'instant on ne va pas sur le serveur.
 #
 
+
+# Met tes données de départ ici !
 bookmarkDatas = [
- # Met tes données de départ ici !
      {
         "type": "FeatureCollection"
         "features": [
@@ -140,5 +137,7 @@ bookmarkDatas = [
 ]
 
 
-React.render(React.createElement(MyPlaceComponent , bookmarkDatas: bookmarkDatas),
+data = bookmarkDatas: bookmarkDatas
+React.render(React.createElement(MyPlaceComponent, data),
              document.getElementById('app'))
+
