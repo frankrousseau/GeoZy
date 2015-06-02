@@ -24,11 +24,16 @@ bookmarkDatas = [
                     "postalCode": "75009"
                     "city": "Paris"
                     "state": ""
+                    "zip": ""
                     "country": "France"
-                    "phone": "+33 42 42 1337"
-                    "email": "foo@bar.io"
-                    "website": "http://foobar.io"
-                    "tag": "tag"
+                    "phone": ""
+                    "email": ""
+                    "website": ""
+                    "note": ""
+                    "marker-color": ""
+                    "marker-size": ""
+                    "marker-symbol": ""                    
+                    "tag": "mytag"
             }
         ]
     }
@@ -48,7 +53,8 @@ bookmarkDatas = [
                 "address": "6 et 4bis avenue Jean Aicard"
                 "postalCode": "75011"
                 "city": "Paris"
-                "state": ""
+                "state": "Ile de France"
+                "zip": ""
                 "country": "France"
                 "phone": "+33 1 48 06 40 94"
                 "email": "foo@bar.io"
@@ -57,7 +63,7 @@ bookmarkDatas = [
                 "marker-color": ""
                 "marker-size": ""
                 "marker-symbol": ""
-                "tag": "bar biere, french"
+                "tag": "bar biere french"
 
             ]
     }

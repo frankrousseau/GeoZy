@@ -1,7 +1,6 @@
 React = require 'react'
 {div, p, a, button, input, label, h1} = React.DOM
 
-
 # C'est la barre qui apparait à gauche. Elle contient la liste des bookmarks
 # disponibles.
 module.exports = SideBar = React.createFactory React.createClass
@@ -23,7 +22,6 @@ BookmarkListComponent = React.createFactory React.createClass
     getInitialState: ->
         return bookmarkDatas: @props.bookmarkDatas
 
-
     # Rendu du composant.
     render: ->
 
@@ -38,11 +36,24 @@ BookmarkListComponent = React.createFactory React.createClass
         for bookmarkData in @state.bookmarkDatas
             bookmarkComponent = BookmarkComponent
                 label: bookmarkData.features[0].properties.label
+              # coordinates lat lng
+
                 address: bookmarkData.features[0].properties.address
+                postalCode: bookmarkData.features[0].properties.postalCode
+                city: bookmarkData.features[0].properties.city
+                state: bookmarkData.features[0].properties.state
+                zip: bookmarkData.features[0].properties.zip
+                country: bookmarkData.features[0].properties.country
+
+                website: bookmarkData.features[0].properties.website
+                email: bookmarkData.features[0].properties.email
+                phone: bookmarkData.features[0].properties.phone
+
+                tag: bookmarkData.features[0].properties.tag
+
+
             bookmarkComponents.push bookmarkComponent
         return bookmarkComponents
-
-
 
 
 # Le composant qui va définir une ligne de bookmark.
@@ -51,7 +62,20 @@ BookmarkComponent = React.createFactory React.createClass
     getInitialState: ->
         return {
             label: @props.label
+        # coordinates lat lng
+
             address: @props.address
+            postalCode: @props.postalCode
+            city: @props.city
+            state: @props.state
+            zip: @props.zip
+            country: @props.country
+
+            website: @props.website
+            email: @props.email
+            phone: @props.phone
+
+            tag: @props.tag
         }
 
     # Rendu de la bookmark
@@ -60,4 +84,9 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: "title"},
                 @state.label
             p {className: 'pro'},
-                @state.address
+                "#{@state.address} #{@state.postalCode} #{@state.city}, #{@state.state} #{@state.zip} - #{@state.country}"
+            p {className: 'pro2'},
+              #  "<a href=" + @state.website + " target=_blank>" + @state.website + "</a>"
+               "#{@state.website} #{@state.email} #{@state.phone}"
+            p {className: 'tag'},
+                @state.tag
