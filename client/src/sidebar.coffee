@@ -7,8 +7,8 @@ React = require 'react'
 module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
-        div id: 'sidebar',
-            h1 id: "title", 'My Places'
+        div className: 'sidebar',
+            div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
 
@@ -27,7 +27,7 @@ BookmarkListComponent = React.createFactory React.createClass
     # Rendu du composant.
     render: ->
 
-        div id: "bookmark-list",
+        div id: "bookmark-list", className: 'listings',
             # Ici on génère un composant bookmark par bookmark présentes
             # dans la liste.
             @getBookmarkComponents()
@@ -44,6 +44,7 @@ BookmarkListComponent = React.createFactory React.createClass
 
 
 
+
 # Le composant qui va définir une ligne de bookmark.
 BookmarkComponent = React.createFactory React.createClass
 
@@ -55,8 +56,8 @@ BookmarkComponent = React.createFactory React.createClass
 
     # Rendu de la bookmark
     render: ->
-        div null,
-            p {className: "label"},
+        div className: 'item',
+            p {className: "title"},
                 @state.label
-            p {className: 'address'},
+            p {className: 'pro'},
                 @state.address

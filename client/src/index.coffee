@@ -35,6 +35,7 @@ bookmarkDatas = [
     {
         "type": "FeatureCollection"
         "features": [
+
             "type": "Feature"
             "geometry":
                 "type": "Point"
@@ -57,6 +58,7 @@ bookmarkDatas = [
                 "marker-size": ""
                 "marker-symbol": ""
                 "tag": "bar biere, french"
+
             ]
     }
 ]
