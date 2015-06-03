@@ -132,4 +132,4 @@ ItemComponent = React.createFactory React.createClass
     render: ->
         div id: 'item',
             ItemComponent
-			      onClick: @onItemComponentClicked
+            onClick: @onItemComponentClicked
