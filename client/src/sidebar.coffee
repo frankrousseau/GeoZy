@@ -99,8 +99,7 @@ BookmarkComponent = React.createFactory React.createClass
         }
 
     # Rendu de la cellule info
-    # div afk : onclick = active
-    # div item : onclick = active && show on map (focus)
+    # div afk : onclick = active && show on map (focus)
     # div infow : onclick = active + href target _blank
     # when click another cell unactive && unfocus the previous 1
     render: ->
