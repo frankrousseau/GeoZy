@@ -10,8 +10,6 @@ React = require 'react'
 #     className: 'fa fa-list' + @props.iconfa-list, null
 
 
-
-
 # C'est la barre qui apparait à gauche. Elle contient la liste des bookmarks
 # disponibles.
 module.exports = SideBar = React.createFactory React.createClass
