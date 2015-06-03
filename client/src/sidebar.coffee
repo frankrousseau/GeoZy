@@ -99,6 +99,10 @@ BookmarkComponent = React.createFactory React.createClass
         }
 
     # Rendu de la cellule info
+    # div afk : onclick = active
+    # div item : onclick = active && show on map (focus)
+    # div infow : onclick = active + href target _blank
+    # when click another cell unactive && unfocus the previous 1
     render: ->
       div id: 'afk',
         div className: 'item',
@@ -118,3 +122,15 @@ BookmarkComponent = React.createFactory React.createClass
                 @state.tag
 #            p {className: 'tag'},
 #                  "#{@state.type}: #{@state.coordinates}"
+
+
+# test SetActive
+ItemComponent = React.createFactory React.createClass
+
+  onItemComponentClicked: (event) ->
+        className: 'active',
+
+    render: ->
+        div id: 'item',
+            ItemComponent
+			      onClick: @onItemComponentClicked
