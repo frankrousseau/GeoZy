@@ -19,11 +19,31 @@ body {
   box-sizing:border-box;
 }
 a {
-    color:#850ad8;
+    color:#09da0f;
     text-decoration:none;
 }
-a:hover { color:#370a64; }
+a:hover { color:#267c07; }
 
+input {
+    color:#555555;
+    border-radius: 3px;
+    background-color: white;
+    display: inline-block;
+    line-height:20px;
+    margin: 2px;
+    margin-top: 10px;
+    border: 1px solid #34A6FF;
+}
+.search {
+  background: lightgrey;
+  border: 0px;
+  height: 45px;
+  margin-top: 0px;
+  padding:0 20;
+  font: 18px 'Source Sans Pro';
+  font-weight:580;
+  color: #34A6FF;
+}
 .heading {
   background:#fff;
   font: 32px 'Source Sans Pro';

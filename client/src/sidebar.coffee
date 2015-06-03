@@ -7,6 +7,10 @@ module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
         div className: 'sidebar',
+            div className: 'search',
+#Search by properties when "on list" Search by address when "on map".
+#Click "ON LIST!" to toggle.
+              id: "search", input className: 'input', '"ON LIST!"'
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
@@ -36,8 +40,9 @@ BookmarkListComponent = React.createFactory React.createClass
         for bookmarkData in @state.bookmarkDatas
             bookmarkComponent = BookmarkComponent
                 label: bookmarkData.features[0].properties.label
-              # coordinates lat lng
-
+                # coordinates: lat lng
+                #label and coordinates should be the 2 imperatives values
+                #needed to build a new file.
                 address: bookmarkData.features[0].properties.address
                 postalCode: bookmarkData.features[0].properties.postalCode
                 city: bookmarkData.features[0].properties.city
@@ -62,7 +67,6 @@ BookmarkComponent = React.createFactory React.createClass
     getInitialState: ->
         return {
             label: @props.label
-        # coordinates lat lng
 
             address: @props.address
             postalCode: @props.postalCode
@@ -84,9 +88,13 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: "title"},
                 @state.label
             p {className: 'pro'},
+#Should be a if conditions @state.state=1 and @state.city=1 then put ',' before.
+#idem for country with '-'
                 "#{@state.address} #{@state.postalCode} #{@state.city}, #{@state.state} #{@state.zip} - #{@state.country}"
             p {className: 'pro2'},
               #  "<a href=" + @state.website + " target=_blank>" + @state.website + "</a>"
-               "#{@state.website} #{@state.email} #{@state.phone}"
+              #  "<a href='#{@state.website}'>#{@state.website}</a>"
+
+                "#{@state.website} #{@state.email} #{@state.phone}"
             p {className: 'tag'},
                 @state.tag
