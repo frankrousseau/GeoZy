@@ -39,10 +39,14 @@ BookmarkListComponent = React.createFactory React.createClass
         bookmarkComponents = []
         for bookmarkData in @state.bookmarkDatas
             bookmarkComponent = BookmarkComponent
-                label: bookmarkData.features[0].properties.label
-                # coordinates: lat lng
+                coordinates: bookmarkData.features[0].geometry.coordinates
+                #if [coordinates] are a sigle pinpoint then "type": "Point"
+                #coordinates: lng lat
+                type: bookmarkData.features[0].geometry.type
                 #label and coordinates should be the 2 imperatives values
                 #needed to build a new file.
+                label: bookmarkData.features[0].properties.label
+
                 address: bookmarkData.features[0].properties.address
                 postalCode: bookmarkData.features[0].properties.postalCode
                 city: bookmarkData.features[0].properties.city
@@ -80,6 +84,9 @@ BookmarkComponent = React.createFactory React.createClass
             phone: @props.phone
 
             tag: @props.tag
+
+            type: @props.type
+            coordinates: @props.coordinates
         }
 
     # Rendu de la bookmark
@@ -98,3 +105,5 @@ BookmarkComponent = React.createFactory React.createClass
                 "#{@state.website} #{@state.email} #{@state.phone}"
             p {className: 'tag'},
                 @state.tag
+#            p {className: 'pro2'},
+#                  "#{@state.type}: #{@state.coordinates}"
