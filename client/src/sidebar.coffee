@@ -1,5 +1,5 @@
 React = require 'react'
-{div, p, a, button, input, label, h1} = React.DOM
+{div, p, a, button, input, label, h1, h2, br} = React.DOM
 
 # Icon
 #fa fa-list
@@ -104,7 +104,8 @@ BookmarkComponent = React.createFactory React.createClass
         div className: 'item',
             p {className: "title"},
                 @state.label
-            p {className: 'irl'},
+                 br null, null
+            className: 'irl',
                 "#{@state.address} "
                 "#{@state.postalCode} "
                 "#{@state.city}, "    # ','Should be a if conditions
@@ -118,10 +119,10 @@ BookmarkComponent = React.createFactory React.createClass
                  "#{@state.email} "
                  "#{@state.phone} "
 
-             p {className: 'tag'},
-                @state.tag
-                " #{@state.type}: "
-                "#{@state.coordinates}"
+             h1 {className: 'tag'},
+                 @state.tag
+                 " #{@state.type}: "
+                 "#{@state.coordinates}"
                                       # when click another cell unactive && unfocus the previous 1
 
 
