@@ -17,7 +17,8 @@ module.exports = SideBar = React.createFactory React.createClass
     render: ->
         div className: 'sidebar',
             div className: 'search',
-#Search by properties when "fa fa-list" Search on map address when "fa fa-location-arrow".
+#Search by properties when "fa fa-list"
+#Search on map address when "fa fa-location-arrow".
 #Click to select.
               id: "search", input className: 'input', ' ', a className: 'fa fa-list',
             div className: 'heading', 'My Places'
@@ -129,7 +130,8 @@ BookmarkComponent = React.createFactory React.createClass
 ItemComponent = React.createFactory React.createClass
 
   onItemComponentClicked: (event) ->
-        className: 'active',
+        className: 'active'
+        return onItemComponentClicked
 
     render: ->
         div id: 'item',
