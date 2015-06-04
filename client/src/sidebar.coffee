@@ -125,7 +125,6 @@ BookmarkComponent = React.createFactory React.createClass
                  "#{@state.coordinates}"
                                       # when click another cell unactive && unfocus the previous 1
 
-
 # test SetActive
 ItemComponent = React.createFactory React.createClass
 
