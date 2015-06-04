@@ -105,7 +105,7 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: "title"},
                 @state.label
                  br null, null
-            className: 'irl',
+             a  className: 'irl',
                 "#{@state.address} "
                 "#{@state.postalCode} "
                 "#{@state.city}, "    # ','Should be a if conditions
