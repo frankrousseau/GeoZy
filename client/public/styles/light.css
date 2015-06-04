@@ -19,10 +19,11 @@ body {
   box-sizing:border-box;
 }
 a {
-    color:#09da0f;
+    color:#267c07;
     text-decoration:none;
 }
-a:hover { color:#267c07; }
+a:hover { color:#09da0f; }
+a.active { color:#fe8800; }
 
 input {
     color:#555555;

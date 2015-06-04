@@ -19,7 +19,7 @@ module.exports = SideBar = React.createFactory React.createClass
             div className: 'search',
 #Search by properties when "fa fa-list" Search on map address when "fa fa-location-arrow".
 #Click to select.
-              id: "search", input className: 'input', ' ', label className: 'fa fa-list', ' ', label className: 'fa fa-location-arrow',
+              id: "search", input className: 'input', ' ', a className: 'fa fa-list',
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
@@ -98,29 +98,31 @@ BookmarkComponent = React.createFactory React.createClass
             coordinates: @props.coordinates
         }
 
-    # Rendu de la cellule info
-    # div afk : onclick = active && show on map (focus)
-    # div infow : onclick = active + href target _blank
-    # when click another cell unactive && unfocus the previous 1
+# Rendering items on listings sidebar
     render: ->
-      div id: 'afk',
+      div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
             p {className: "title"},
                 @state.label
             p {className: 'irl'},
-#Should be a if conditions @state.state=1 and @state.city=1 then put ',' before.
-#idem for country with '-'
-                "#{@state.address} #{@state.postalCode} #{@state.city}, #{@state.state} #{@state.zip} - #{@state.country}"
-                div id: 'infow',
-            p {className: 'kontact'},
-              #  "<a href=" + @state.website + " target=_blank>" + @state.website + "</a>"
-              #  "<a href='#{@state.website}'>#{@state.website}</a>"
+                "#{@state.address} "
+                "#{@state.postalCode} "
+                "#{@state.city}, "    # ','Should be a if conditions
+                "#{@state.state} "
+                "#{@state.zip} "
+                "#{@state.country}"
 
-                "#{@state.website} #{@state.email} #{@state.phone}"
-            p {className: 'tag'},
+                div id: 'infow',      # div infow : onclick = active + href target _blank
+            p {className: 'kontact'},
+                 "#{@state.website} " # Howto do a href target=_blank
+                 "#{@state.email} "
+                 "#{@state.phone} "
+
+             p {className: 'tag'},
                 @state.tag
-#            p {className: 'tag'},
-#                  "#{@state.type}: #{@state.coordinates}"
+                " #{@state.type}: "
+                "#{@state.coordinates}"
+                                      # when click another cell unactive && unfocus the previous 1
 
 
 # test SetActive
