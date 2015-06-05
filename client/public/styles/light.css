@@ -21,10 +21,13 @@ body {
 a {
     color:#267c07;
     text-decoration:none;
+    cursor:pointer;
 }
 a:hover { color:#09da0f; }
-a.active { color:#fe8800; }
-
+a.active {
+  color:#fe8800;
+  cursor:initial;
+}
 input {
     color:#555555;
     border-radius: 3px;
@@ -35,6 +38,8 @@ input {
     margin-top: 10px;
     border: 1px solid #34A6FF;
 }
+span#address { display:block; }
+
 .search {
   background: lightgrey;
   border: 0px;
@@ -74,6 +79,7 @@ input {
   display:block;
   border-bottom:1px solid #eee;
   padding:1px 10px;
+  padding-bottom:10px;
   text-decoration:none;
 }
 .listings .item:hover { background-color:#FFC47F; }
@@ -94,6 +100,7 @@ input {
   font-size:15px;
   font-weight:500;
   line-height:15px;
+  display:block;
 }
 .listings .item .kontact {
   color:#888;
@@ -109,4 +116,5 @@ input {
   font-weight:700;
   line-height:11px;
   margin-left:30px;
+  margin-bottom: 6px;
 }

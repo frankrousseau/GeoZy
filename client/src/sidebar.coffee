@@ -1,5 +1,5 @@
 React = require 'react'
-{div, p, a, button, input, label, h1, h2, br} = React.DOM
+{div, p, a, button, input, label, h1, h2, br, span} = React.DOM
 
 # Icon
 #fa fa-list
@@ -106,7 +106,7 @@ BookmarkComponent = React.createFactory React.createClass
             p {className: "title"},
                 @state.label
                  br null, null
-            a className: 'irl',
+            span className: 'irl',
                 "#{@state.address} "
                 "#{@state.postalCode} "
                 "#{@state.city}, "    # ','Should be a if conditions
@@ -120,7 +120,7 @@ BookmarkComponent = React.createFactory React.createClass
                  "#{@state.email} "
                  "#{@state.phone} "
 
-             h1 {className: 'tag'},
+             span {className: 'tag'},
                  @state.tag
                  " #{@state.type}: "
                  "#{@state.coordinates}"
