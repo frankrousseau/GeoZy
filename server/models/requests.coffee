@@ -5,7 +5,3 @@ module.exports =
     bookmark:
         all: cozydb.defaultRequests.all
 
-
-module.exports =
-    bookmark:
-        all: cozydb.defaultRequests.all

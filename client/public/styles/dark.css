@@ -1,0 +1,112 @@
+
+button { cursor: pointer; }
+
+* {
+  boxSizing: border-box;
+}
+
+body {
+  color:#45199d;
+  font:400 15px/22px 'Source Sans Pro';
+  background:#404040;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+a {
+    color:#267c07;
+    text-decoration:none;
+}
+a:hover { color:#09da0f; }
+a.active { color:#fe8800; }
+
+input {
+    color:#555555;
+    border-radius: 3px;
+    background-color: #555555;
+    display: inline-block;
+    line-height:20px;
+    margin: 2px;
+    margin-top: 10px;
+    border: 1px solid #48b9ca;
+}
+.search {
+  background: #404040;
+  border: 0px;
+  height: 45px;
+  margin-top: 0px;
+  padding:0 20;
+  font: 18px 'Source Sans Pro';
+  font-weight:580;
+  color: #48b9ca;
+}
+.heading {
+  background:#1e1d1d;
+  font: 32px 'Source Sans Pro';
+  font-weight:700;
+  color: #f0f0f0;
+  border-bottom:1px solid #404040;
+  height:60px;
+  line-height:60px;
+  padding:0 60px;
+}
+.sidebar {
+  position:absolute;
+  width:23%;
+  height:100%;
+  top:0;left:0;
+  overflow:hidden;
+  background: #404040;
+  border-right:1px solid rgba(0,0,0,0.25);
+}
+.listings {
+  color: #d20eab;
+  height:100%;
+  overflow:auto;
+  padding-bottom:60px;
+}
+.listings .item {
+  display:block;
+  border-bottom:1px solid #404040;
+  padding:1px 10px;
+  text-decoration:none;
+}
+.listings .item:hover { background-color:#1e1d1d; }
+.listings .item:active { background-color:#48b9ca;}
+.listings .item.active { background-color:#48b9ca;}
+
+.listings .item .title {
+  color:#48b9ca;
+  font-size:18px;
+  font-weight:700;
+  line-height:18px;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+.listings .item .irl {
+  color:#639265;
+  font-size:15px;
+  font-weight:500;
+  line-height:15px;
+}
+.listings .item .kontact {
+  color:#d9d9d9;
+  font-size:13px;
+  font-weight:400;
+  line-height:13px;
+  margin-top: 18px;
+  margin-bottom: 0px;
+}
+.listings .item .tag {
+  color:#b9b2d1;
+  font-size:11px;
+  font-weight:700;
+  line-height:11px;
+  margin-left:30px;
+}
