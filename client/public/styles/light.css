@@ -30,13 +30,11 @@ a.active {
 }
 input {
     color:#555555;
+    border: 1px solid #34A6FF;
     border-radius: 3px;
     background-color: white;
-    display: inline-block;
+    display: inline;
     line-height:20px;
-    margin: 2px;
-    margin-top: 10px;
-    border: 1px solid #34A6FF;
 }
 span#address { display:block; }
 
@@ -44,11 +42,12 @@ span#address { display:block; }
   background: lightgrey;
   border: 0px;
   height: 45px;
-  margin-top: 0px;
-  padding:0 20;
+  padding: 10px 20px;
+  padding-right: 5px;
   font: 18px 'Source Sans Pro';
   font-weight:580;
   color: #34A6FF;
+  display: inline-block;
 }
 .heading {
   background:#fff;

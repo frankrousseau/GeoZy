@@ -1,5 +1,5 @@
 React = require 'react'
-{div, p, a, button, input, label, h1, h2, br, span} = React.DOM
+{div, p, a, button, input, label, h1, h2, br, span, i} = React.DOM
 
 # Icon
 #fa fa-list
@@ -16,11 +16,11 @@ module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
         div className: 'sidebar',
-            div className: 'search',
-#Search by properties when "fa fa-list"
-#Search on map address when "fa fa-location-arrow".
-#Click to select.
-              id: "search", input className: 'input', ' ', a className: 'fa fa-list',
+#Should be able to search by Bookmarks props and on map
+#when clicked inside input clear the inside input.
+            div id: "asearch", className: 'search', 'search'
+             input className: 'input',
+
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
@@ -44,7 +44,7 @@ BookmarkListComponent = React.createFactory React.createClass
             # dans la liste.
             @getBookmarkComponents()
 
-    # Cette fonction renvoie un la liste des bookmarks qu'on veut générer.
+    # Cette fonction renvoie à la liste des bookmarks qu'on veut générer.
     getBookmarkComponents: ->
         bookmarkComponents = []
         for bookmarkData in @state.bookmarkDatas
