@@ -16,6 +16,8 @@ module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
         div className: 'sidebar',
+            div className: 'home-button',
+                button onClick: @props.onShowHomeClicked, 'Show Home'
             div id: "asearch", className: 'search', 'search'
             input className: 'input', null
 
@@ -101,6 +103,7 @@ BookmarkComponent = React.createFactory React.createClass
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
+            a className: 'maclasse', href: 'http://test', target: '_blank', 'Le texte du lien'
             p {className: "title"},
                 @state.label
                  br null, null

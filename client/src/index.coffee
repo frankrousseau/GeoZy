@@ -65,19 +65,36 @@ bookmarkDatas = [
                 "tag": "bar biere french"
             ]
     }
+
 ]
+
+
+getHomePosition = (city) ->
+    return [48.8567, 2.3508] # toujours Paris
 
 
 # C'est le composant principal de l'application.
 MyPlaceComponent = React.createClass
 
+    getInitialState: ->
+        return center: [51.545, -0.09]
+
     # Ici on assure le rendu de ce composant.
     render: ->
+        console.log @state.center
         div className: 'main',
             # Ici c'est un composant spécifique que nous avons créé.
             SideBar
                bookmarkDatas: @props.bookmarkDatas
-            MapBox null, null
+               onShowHomeClicked: @onShowHomeClicked
+            MapBox
+                center: @state.center
+
+    onShowHomeClicked: ->
+        @setState
+            center: getHomePosition()
+
+
 
 
 # Ici on initialise l'application.
@@ -88,3 +105,4 @@ initApp = ->
 
 
 initApp()
+
