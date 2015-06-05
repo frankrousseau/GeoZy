@@ -11,6 +11,9 @@ React = require 'react'
 # ou
 # a propos de Open Layer
 # https://github.com/openlayers/ol3
+# ou
+# la sandbox MapBox
+# cf comments on index.html
 
 module.exports = MapBox = React.createFactory React.createClass
 
