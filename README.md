@@ -19,7 +19,7 @@ SOON:
 * Responsive design
 
 
-*previous setps on CHANGELOG.md*
+*previous steps on CHANGELOG.md*
 
 ## Config
 
