@@ -105,4 +105,3 @@ initApp = ->
 
 
 initApp()
-

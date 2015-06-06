@@ -103,7 +103,6 @@ BookmarkComponent = React.createFactory React.createClass
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
-            a className: 'maclasse', href: 'http://test', target: '_blank', 'Le texte du lien'
             p {className: "title"},
                 @state.label
                  br null, null
@@ -115,11 +114,12 @@ BookmarkComponent = React.createFactory React.createClass
                 "#{@state.zip} "
                 "#{@state.country}"
 
-                div id: 'infow',      # div infow : onclick = active + href target _blank
+                div id: 'infow',
             p {className: 'kontact'},
-                 "#{@state.website} " # Howto do a href target=_blank
-                 "#{@state.email} "
-                 "#{@state.phone} "
+                a href: @state.website, target: '_blank', @state.website + ' '
+                a href: "mailto:@state.email", target: '_top', @state.email + ' '
+                a href: "callto:@state.phone", target: '_top', @state.phone
+
 
              span {className: 'tag'},
                  @state.tag

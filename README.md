@@ -1,35 +1,44 @@
-### GeoZy webapp development
-*simple tool for rendering .geojson files with MapBox*  
+# GeoZy
+`status: in development`  
+> simple tool for rendering GeoBookmarks files with OpenStreetMap  
 
-It should be a portage of [GeoZy-Ex](https://github.com/ChironGizmo/GeoZy-EX) into CoffeeScript based on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/blob/master/server.coffee), to ultimately being deployed on a  CozyCloud instance.
+The server is based  on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/), on a standalone focus but also [CozyCloud](https://github.com/mycozycloud) friendly. The frontend is built with [React](https://facebook.github.io/react/), it used [OSM](http://osm.org) with [leaflet]((http://leafletjs.com/) and [Ract-Leaflet](https://github.com/PaulLeCam/react-leaflet) witch provide components for Leaflet maps.
 
-### ToDo
-short terms:
-* add a marker and be enable to save/edit as geojson with properties
-* add a tool to creat/edit the listings files properties
-* enable search by tag/label or all properties
+## Development
+This project is still an attempt to provide a user friendly Geolocalisation WebbApp.
+It's also a part of the mentorship programme from Cozy.  
 
-### Documentations
-[http://leafletjs.com/reference.html](http://leafletjs.com/reference.html)  
-[https://www.mapbox.com/mapbox.js/example/v1.0.0/](https://www.mapbox.com/mapbox.js/example/v1.0.0/)  
-[https://www.mapbox.com/mapbox.js/api/v2.1.9/](https://www.mapbox.com/mapbox.js/api/v2.1.9/)  
-[http://geojson.org/](http://geojson.org/)  
-[https://github.com/cozy](https://github.com/cozy)  
+ATM:  
+* organize some leaflets on map
+* sidebar and map communications
+* rendering bookmarks on map
 
-### How to Use and Install
+SOON:
+* enable search by tag/label and all properties
+* [add leaflet-extra](http://leaflet-extras.github.io/leaflet-providers/preview/)
+* previous setps on CHANGELOG.md
 
-**Early stage**  
-**Need to fix some issues, thanks!!**  
+## Config
 
-CoffeeScript should be already installed, right!  
-```
+CoffeeScript should be already installed  
+```bash
 sudo npm install coffee-script -g
 ```
 Then,  
-```
+```bash
 git clone https://github.com/ChironGizmo/GeoZy
 cd GeoZy
 sudo npm install
 coffee server.coffee
 open http://localhost:9240
 ```
+Client, debug
+```bash
+cd client
+npm install
+npm start
+```
+### usefull links
+[https://switch2osm.org](https://switch2osm.org)  
+[GPX file](http://en.wikipedia.org/wiki/GPS_Exchange_Format)  
+[geojson](http://geojson.org/)
