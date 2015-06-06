@@ -18,7 +18,7 @@ height = window.innerHeight or \
     document.body.clientHeight
 
 
-module.exports = MapBox = React.createFactory React.createClass
+module.exports = MyMap = React.createFactory React.createClass
 
 
     render: ->

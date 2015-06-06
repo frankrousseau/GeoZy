@@ -6,9 +6,6 @@ React = require 'react'
 #fa fa-location-arrow
 #fa fa-map-marker
 #fa fa-globe
-#icon = React.createFactory React.createClass
-#     className: 'fa fa-list' + @props.iconfa-list, null
-
 
 # C'est la barre qui apparait à gauche. Elle contient la liste des bookmarks
 # disponibles.
@@ -126,15 +123,3 @@ BookmarkComponent = React.createFactory React.createClass
                  " #{@state.type}: "
                  "#{@state.coordinates}"
                                       # when click another cell unactive && unfocus the previous 1
-
-# test SetActive
-ItemComponent = React.createFactory React.createClass
-
-  onItemComponentClicked: (event) ->
-        className: 'active'
-        return onItemComponentClicked
-
-    render: ->
-        div id: 'item',
-            ItemComponent
-            onClick: @onItemComponentClicked

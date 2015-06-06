@@ -16,10 +16,12 @@
     "url": "git+ssh://git@github.com/ChironGizmo/GeoZy.git"
   },
   "keywords": [
-    "zeroconfig",
+    "GeoBookmarks",
     "self-hosting",
     "single-page",
-    "app"
+    "OSM",
+    "react",
+    "npm"
   ],
   "author": "Chiron Gizmo",
   "license": "MIT",
@@ -31,11 +33,6 @@
     "americano": "^0.4.1",
     "async": "^0.9.0",
     "cozy-db-pouchdb": "0.0.13",
-    "geojson-extent": "^0.3.1",
-    "geojson-normalize": "0.0.0",
-    "leaflet": "^0.7.3",
-    "mapbox-gl": "^0.7.0",
-    "mapbox.js": "^2.1.8",
     "path-extra": "^1.0.2",
     "pouchdb": "^3.5.0"
   }

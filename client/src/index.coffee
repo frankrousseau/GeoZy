@@ -2,7 +2,7 @@ React = require 'react'
 {div} = React.DOM
 
 SideBar = require './sidebar.coffee'
-MapBox = require './mapbox.coffee'
+MyMap = require './mymap.coffee'
 
 
 # Met tes données de départ ici !
@@ -87,7 +87,7 @@ MyPlaceComponent = React.createClass
             SideBar
                bookmarkDatas: @props.bookmarkDatas
                onShowHomeClicked: @onShowHomeClicked
-            MapBox
+            MyMap
                 center: @state.center
 
     onShowHomeClicked: ->
