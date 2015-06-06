@@ -1,7 +1,8 @@
 ## v0.2.0-beta.1 (5/06/15)
-* leaflet: ^0.7.3
-* react-leaflet: ^0.6.1
----
+* leaflet: 0.7.3  
+* react-leaflet: 0.6.1  
+
+_________________________
 - remove MapBox, Leaflet and Font Awesome CDN
 - materials are noved inside public/
     - /assets
