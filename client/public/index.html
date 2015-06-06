@@ -4,37 +4,38 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>GeoZy</title>
+    <link rel="stylesheet" href="styles/leaflet.css" />
     <link rel='stylesheet' href='main.css' />
-    <!-- option?? react-with-addons(may not use for production) -->
-    <script src='//fb.me/react-with-addons-0.12.0.js'></script>
-    <!-- option?? MapBox API(may not use for production) -->
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+    <link rel='stylesheet' href='styles/light.css' />
+    <link rel='stylesheet' href='assets/fonts/font-awesome.min.css' />
   </head>
   <body>
+    <div id="app"></div>
 
-  <!-- fusion of app Bookmark and geojson listings (may move main CSS to ./styles/main.css or .styl??) -->
-  <div class='sidebar'>
-  <script src='./client/src/sidebar.coffee'></script>
-    <div id='app'></div>
-    <div class='heading'>my places</div>
-    <div id='listings' class='listings'></div>
-  </div>
+    <!-- option?? react-with-addons(may not use for production)
+    <script src='//fb.me/react-with-addons-0.12.0.js'></script> -->
 
-  <div id='map' class='map'> </div>
-  <pre id='coordinates' class='ui-coordinates'></pre>
-  <!-- option 'need for locatecontrole leaflet' CDN font awesome (not use for production) -->
-  <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
-  <!-- option?? Leaflet plugin (may not use for production) -->
+    <!-- option?? MapBox API(may not use for production)
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />-->
+
+  </head>
+  <body>
+  <div id="app"></div>
+
+  <!--<div id='map' class='map'> </div> -->
+  <!--<pre id='coordinates' class='ui-coordinates'></pre> -->
+
+  <!-- option?? Leaflet plugin (may not use for production)
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.42.0/L.Control.Locate.min.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.42.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
-  <!-- scripts JS -->
-    <script src='render.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>-->
+
     <script src='browser-bundle.js'></script>
   </body>
 </html>
