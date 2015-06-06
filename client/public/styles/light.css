@@ -109,6 +109,9 @@ span#address { display:block; }
   margin-top: 18px;
   margin-bottom: 0px;
 }
+.listings .item .kontact a { color: #888; }
+.listings .item .kontact a:hover { color:#c90b0b; }
+
 .listings .item .tag {
   color:#34A6FF;
   font-size:11px;

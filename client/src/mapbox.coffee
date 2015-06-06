@@ -2,16 +2,13 @@ React = require 'react'
 {div, p, a, button, span, input, label, h1} = React.DOM
 {Map, TileLayer, Marker, Popup} = require 'react-leaflet'
 
-
-# a propos de Leaflet
-# https://switch2osm.org/fr/utilisation-des-tuiles/debuter-avec-leaflet/
-# https://github.com/Leaflet/Leaflet
-
+# creat react-leaflet markers
 Map = React.createFactory Map
 TileLayer = React.createFactory TileLayer
 Marker = React.createFactory Marker
 Popup = React.createFactory Popup
 
+# debug map size
 width = window.innerWidth or \
     document.documentElement.clientWidth or \
     document.body.clientWidth
@@ -42,4 +39,3 @@ module.exports = MapBox = React.createFactory React.createClass
             Marker position: [51.545, -0.09],
                 Popup null,
                     span null, 'A pretty CSS3 popup.Easily customizable.'
-
