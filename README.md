@@ -2,7 +2,7 @@
 `status: in development`  
 > simple tool for rendering GeoBookmarks files with OpenStreetMap  
 
-The server is based  on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/), on a standalone focus but also [CozyCloud](https://github.com/mycozycloud) friendly. The frontend is built with [React](https://facebook.github.io/react/), it used [OSM](http://osm.org) with [leaflet]((http://leafletjs.com/) and [Ract-Leaflet](https://github.com/PaulLeCam/react-leaflet) witch provide components for Leaflet maps.
+The server is based  on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/), on a standalone focus but also [CozyCloud](https://github.com/mycozycloud) friendly. The frontend is built with [React](https://facebook.github.io/react/), it used [OSM](http://osm.org) with [leaflet](http://leafletjs.com/) and [Ract-Leaflet](https://github.com/PaulLeCam/react-leaflet) witch provide components for Leaflet maps.
 
 ## Development
 This project is still an attempt to provide a user friendly Geolocalisation WebbApp.
