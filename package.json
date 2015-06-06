@@ -1,7 +1,7 @@
 {
   "name": "geozy",
-  "version": "0.1.0",
-  "description": "simple tool for rendering .geojson files with MapBox",
+  "version": "0.2.0",
+  "description": "simple tool for rendering GeoBookmarks files with OpenStreetMap",
   "main": "server.js",
   "bin": {
     "my-places": "bin/my-places"
