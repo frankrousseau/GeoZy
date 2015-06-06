@@ -2,6 +2,8 @@
 `status: in development for v0.2.0-rc1`  
 > simple tool for rendering GeoBookmarks files with OpenStreetMap  
 
+![screeshot](https://raw.githubusercontent.com/ChironGizmo/GeoZy/master/client/public/assets/img/0.png)
+
 The server is based  on [shareable-app-coffee-americano](https://github.com/frankrousseau/shareable-app-coffee-americano/), with a standalone focus but also [CozyCloud](https://github.com/mycozycloud) friendly. The frontend is built with [React](https://facebook.github.io/react/), it used [OSM](http://osm.org) with [leaflet](http://leafletjs.com/) and [Ract-Leaflet](https://github.com/PaulLeCam/react-leaflet) witch provide components for Leaflet maps.
 
 ## Development
