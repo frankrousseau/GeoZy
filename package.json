@@ -1,6 +1,6 @@
 {
   "name": "geozy",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "description": "simple tool for rendering .geojson files with MapBox",
   "main": "server.js",
   "bin": {
