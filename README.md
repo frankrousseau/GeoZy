@@ -6,7 +6,7 @@ The server is based  on [shareable-app-coffee-americano](https://github.com/fran
 
 ## Development
 This project is still an attempt to provide a user friendly Geolocalisation WebbApp.
-It's also a part of the mentorship programme from Cozy.  
+It's also a part of a french [mentorship programme](https://forum.cozy.io/t/app-geozy-en-developpement/511) with Cozy members.  
 
 ATM:  
 * organize some leaflets on map
