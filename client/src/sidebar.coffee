@@ -15,6 +15,7 @@ module.exports = SideBar = React.createFactory React.createClass
         div className: 'sidebar',
             div className: 'home-button',
                 button onClick: @props.onShowHomeClicked, 'Show Home'
+                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
             div id: "asearch", className: 'search', 'search'
             input className: 'input', null
 
@@ -104,6 +105,7 @@ BookmarkComponent = React.createFactory React.createClass
                 @state.label
                  br null, null
             span className: 'irl',
+                button onClick: @props.onShowMeThatClicked, 'GO'
                 "#{@state.address} "
                 "#{@state.postalCode} "
                 "#{@state.city}, "    # ','Should be a if conditions

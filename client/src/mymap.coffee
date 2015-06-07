@@ -1,4 +1,6 @@
 React = require 'react'
+# Optional L to use vanilla leaflet
+L = require 'leaflet'
 {div, p, a, button, span, input, label, h1} = React.DOM
 {Map, TileLayer, Marker, Popup} = require 'react-leaflet'
 
@@ -7,6 +9,9 @@ Map = React.createFactory Map
 TileLayer = React.createFactory TileLayer
 Marker = React.createFactory Marker
 Popup = React.createFactory Popup
+
+# Custom
+
 
 # debug map size
 width = window.innerWidth or \
@@ -25,7 +30,7 @@ module.exports = MyMap = React.createFactory React.createClass
 
         params =
             center: @props.center
-            zoom: 13
+            zoom: @props.zoom
             style:
                 width: (width - 440) + 'px'
                 height: height + 'px'
@@ -36,6 +41,12 @@ module.exports = MyMap = React.createFactory React.createClass
             TileLayer
                 url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            Marker position: [51.545, -0.09],
+            Marker
+                position: @props.center,
                 Popup null,
-                    span null, 'A pretty CSS3 popup.Easily customizable.'
+                    span className: 'gpopup',
+                        "Here is @: "
+                        "#{@props.center}"
+                        " my friend "
+                        # can't do react action in popup? https://github.com/PaulLeCam/react-leaflet/issues/11
+                        button onClick: @props.onShowZoomifyClicked, 'ZOOM'

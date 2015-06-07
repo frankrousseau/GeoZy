@@ -120,3 +120,13 @@ span#address { display:block; }
   margin-left:30px;
   margin-bottom: 6px;
 }
+.gpopup {
+  color:#555555;
+  background:#fff;
+  font: 'Source Sans Pro';
+  font-size:11px;
+  font-weight:600;
+  line-height:12px;
+}
+.gpopup a { color: #000; }
+.gpopup a:hover { color: #34A6FF; }

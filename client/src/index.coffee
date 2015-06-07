@@ -68,34 +68,50 @@ bookmarkDatas = [
 
 ]
 
-
+# C'est les data du composant MyPlace
 getHomePosition = (city) ->
     return [48.8567, 2.3508] # toujours Paris
+#    return [@state.coordinates]
+
+getHomeZoom = (viewmycity) ->
+    return [13]
+
+getShowMeThat = (gotopin) ->
+    return [@state.coordinates]
 
 
-# C'est le composant principal de l'application.
+# C'est l'état Initial du composant MyPlace
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return center: [51.545, -0.09]
+        return center: [51.478978, -0.010642], zoom: 3, position: [0,11 -0,11],
 
-    # Ici on assure le rendu de ce composant.
     render: ->
-        console.log @state.center
         div className: 'main',
-            # Ici c'est un composant spécifique que nous avons créé.
+            MyMap
+                center: @state.center
+                zoom: @state.zoom
+                onShowZoomifyClicked: @onShowZoomifyClicked
             SideBar
                bookmarkDatas: @props.bookmarkDatas
                onShowHomeClicked: @onShowHomeClicked
-            MyMap
-                center: @state.center
+               onShowZoomifyClicked: @onShowZoomifyClicked
+               onShowMeThatClicked: @onShowMeThatClicked
 
+
+# Attribution de l'état du composant My Place
     onShowHomeClicked: ->
         @setState
             center: getHomePosition()
+            zoom: getHomeZoom()
 
+    onShowZoomifyClicked: ->
+        @setState
+            zoom: getHomeZoom()
 
-
+    onShowMeThatClicked: ->
+        @setState
+            position: getShowMeThat()
 
 # Ici on initialise l'application.
 initApp = ->
