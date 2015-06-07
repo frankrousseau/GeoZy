@@ -77,14 +77,19 @@ getHomeZoom = (viewmycity) ->
     return [13]
 
 getShowMeThat = (gotopin) ->
-    return [@state.coordinates]
+#    return [@state.coordinates]
+     return [51.478978, -0.010642]
 
 
 # C'est l'état Initial du composant MyPlace
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return center: [51.478978, -0.010642], zoom: 3, position: [0,11 -0,11],
+        return {
+            center: [51.478978, -0.010642]
+            zoom: 3
+            position: [51.478978, -0.010642]
+        }
 
     render: ->
         div className: 'main',
