@@ -20,6 +20,14 @@ SOON:
 * [add leaflet-extra](http://leaflet-extras.github.io/leaflet-providers/preview/)
 * Responsive design
 
+IN-MIND:  
+import/export geolocalisation files and storage  
+- In Version 0.2.0-rc1
+ - there is no storage inside `pouchdb` yet.  
+ - working with .geojson with a focus on moving to .gpx but still accept .geojson
+- keep track on App:
+ - [Fancy Palces](https://github.com/gabm/FancyPlaces),
+ - [Run-Bike-Hike](https://github.com/nicodel/Run-Bike-Hike)
 
 *previous steps on CHANGELOG.md*
 
