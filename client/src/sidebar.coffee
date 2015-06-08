@@ -47,9 +47,10 @@ BookmarkListComponent = React.createFactory React.createClass
         bookmarkComponents = []
         for bookmarkData in @state.bookmarkDatas
             bookmarkComponent = BookmarkComponent
-                coordinates: bookmarkData.features[0].geometry.coordinates
-                #if [coordinates] are a sigle pinpoint then "type": "Point"
-                #coordinates: lng lat
+                coordinates: bookmarkData.features[0].geometry.coordinates # /!\ coordinates: [lng,lat]
+                lng: bookmarkData.features[0].geometry.coordinates[0]
+                lat: bookmarkData.features[0].geometry.coordinates[1]
+
                 type: bookmarkData.features[0].geometry.type
                 #label and coordinates should be the 2 imperatives values
                 #needed to build a new file.
@@ -95,6 +96,8 @@ BookmarkComponent = React.createFactory React.createClass
 
             type: @props.type
             coordinates: @props.coordinates
+            lat: @props.lat
+            lng: @props.lng
         }
 
 # Rendering items on listings sidebar
@@ -102,26 +105,26 @@ BookmarkComponent = React.createFactory React.createClass
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
             p {className: "title"},
-                @state.label
+                "#{@state.label}"
+                 br null, null
+            span {className: "mygps"},
+                "Lat: #{@state.lat} Lng: #{@state.lng}"
                  br null, null
             span className: 'irl',
-                button onClick: @props.onShowMeThatClicked, 'GO '
                 "#{@state.address} "
                 "#{@state.postalCode} "
                 "#{@state.city}, "    # ','Should be a if conditions
                 "#{@state.state} "
                 "#{@state.zip} "
                 "#{@state.country}"
-
+                button onClick: @props.onShowMeThatClicked, 'GO '
+                
                 div id: 'infow',
             p {className: 'kontact'},
                 a href: @state.website, target: '_blank', @state.website + ' '
                 a href: "mailto:@state.email", target: '_top', @state.email + ' '
                 a href: "callto:@state.phone", target: '_top', @state.phone
 
-
              span {className: 'tag'},
-                 @state.tag
-                 " #{@state.type}: "
-                 "#{@state.coordinates}"
+                 "TAG: #{@state.tag}"
                                       # when click another cell unactive && unfocus the previous 1

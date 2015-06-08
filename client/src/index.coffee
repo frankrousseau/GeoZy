@@ -3,7 +3,8 @@ React = require 'react'
 
 SideBar = require './sidebar.coffee'
 MyMap = require './mymap.coffee'
-
+#bookmarkDatas = require './geojson/base.geojson'
+#bookmarkxDatas = require './gpx/base.gpx'
 
 # Met tes données de départ ici !
 bookmarkDatas = [
@@ -77,9 +78,8 @@ getHomeZoom = (viewmycity) ->
     return [13]
 
 getShowMeThat = (gotopin) ->
-#    return [@state.coordinates]
-     return [51.478978, -0.010642]
-
+     return [@state.lat, @state.lng]
+#     return [51.478978, -0.010642]
 
 # C'est l'état Initial du composant MyPlace
 MyPlaceComponent = React.createClass
@@ -87,7 +87,7 @@ MyPlaceComponent = React.createClass
     getInitialState: ->
         return {
             center: [51.478978, -0.010642]
-            zoom: 3
+            zoom: [3]
             position: [51.478978, -0.010642]
         }
 
@@ -96,7 +96,8 @@ MyPlaceComponent = React.createClass
             MyMap
                 center: @state.center
                 zoom: @state.zoom
-                onShowZoomifyClicked: @onShowZoomifyClicked
+                position: @state.position
+#                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
             SideBar
                bookmarkDatas: @props.bookmarkDatas
                onShowHomeClicked: @onShowHomeClicked
@@ -109,6 +110,7 @@ MyPlaceComponent = React.createClass
         @setState
             center: getHomePosition()
             zoom: getHomeZoom()
+            position: getHomePosition()
 
     onShowZoomifyClicked: ->
         @setState
@@ -116,6 +118,8 @@ MyPlaceComponent = React.createClass
 
     onShowMeThatClicked: ->
         @setState
+            center: getShowMeThat()
+            zoom: [19]
             position: getShowMeThat()
 
 # Ici on initialise l'application.

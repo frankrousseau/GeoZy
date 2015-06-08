@@ -94,6 +94,16 @@ span#address { display:block; }
   margin-top: 6px;
   margin-bottom: 0px;
 }
+.listings .item .mygps {
+  color:#7d7d7d;
+  font-size:10px;
+  font-weight:600;
+  line-height:10px;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
 .listings .item .irl {
   color:#555555;
   font-size:15px;
@@ -130,3 +140,15 @@ span#address { display:block; }
 }
 .gpopup a { color: #000; }
 .gpopup a:hover { color: #34A6FF; }
+
+pre.ui-Mcoordinates {
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  padding:5px 10px;
+  background:rgba(0,0,0,0.3);
+  color:#fff;
+  font-size:9px;
+  line-height:12px;
+  border-radius:3px;
+  }

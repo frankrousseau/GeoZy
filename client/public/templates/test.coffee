@@ -13,3 +13,39 @@ ItemComponent = React.createFactory React.createClass
         div id: 'item',
             ItemComponent
             onClick: @onItemComponentClicked
+
+
+
+"[#{@state.lat}, #{@state.lng}]"
+
+getShowMeThat = (gotopin) ->
+#    return [@state.coordinates]
+     return [51.478978, -0.010642]
+
+
+    getInitialState: ->
+        return
+            position: [51.478978, -0.010642]
+
+    render: ->
+        div className: 'main',
+
+            SideBar
+               onShowMeThatClicked: @onShowMeThatClicked
+
+
+    onShowMeThatClicked: ->
+        @setState
+            position: getShowMeThat()
+# need to fix: TypeError: latlng is undefined
+
+
+
+
+
+
+
+JsonCoordinatesComponent = React.createFactory React.createClass
+
+    getInitialState: ->
+        return JsonCoordinates: @state.JsonLatLng

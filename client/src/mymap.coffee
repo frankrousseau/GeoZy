@@ -1,6 +1,6 @@
 React = require 'react'
 # Optional L to use vanilla leaflet
-L = require 'leaflet'
+#L = require 'leaflet'
 {div, p, a, button, span, input, label, h1} = React.DOM
 {Map, TileLayer, Marker, Popup} = require 'react-leaflet'
 
@@ -11,6 +11,14 @@ Marker = React.createFactory Marker
 Popup = React.createFactory Popup
 
 # Custom
+
+#get mouse coodrinates
+#Mcoordinates = document.getElementById('coordinates')
+#Map 'mousemove', (e) ->
+#  m = e.LatLng
+#  Mcoordinates.innerHTML = 'Latitude: ' + m.Lat + '<br />Longitude: ' + m.Lng
+#  return
+#  render: -> console.log m.Lat
 
 
 # debug map size
@@ -31,7 +39,7 @@ module.exports = MyMap = React.createFactory React.createClass
         params =
             center: @props.center
             zoom: @props.zoom
-            position: @props.coordinates
+            position: @props.position
             style:
                 width: (width - 440) + 'px'
                 height: height + 'px'
@@ -43,11 +51,13 @@ module.exports = MyMap = React.createFactory React.createClass
                 url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             Marker
-                position: @props.coordinates,
+#                position: "[#{@state.lat}, #{@state.lng}]",
+#                position: @props.center,
+                position: @props.position,
                 Popup null,
                     span className: 'gpopup',
                         "Here is @: "
                         "#{@props.center}"
-                        " my friend "
+                        #" my friend "
                         # can't do react action in popup? https://github.com/PaulLeCam/react-leaflet/issues/11
-                        button onClick: @props.onShowZoomifyClicked, 'ZOOM'
+                        #button onClick: @props.onShowZoomifyClicked, 'ZOOM'
