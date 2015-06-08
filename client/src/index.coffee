@@ -68,17 +68,25 @@ bookmarkDatas = [
     }
 
 ]
-
+# {lat: Number, lng: Number}
 # C'est les data du composant MyPlace
 getHomePosition = (city) ->
-    return [48.8567, 2.3508] # toujours Paris
+#    return [48.8567, 2.3508] # toujours Paris
+    return {
+        lat: 48.8567,
+        lng: 2.3508
+    }
 #    return [@state.coordinates]
 
 getHomeZoom = (viewmycity) ->
     return [13]
 
 getShowMeThat = (gotopin) ->
-     return [@state.lat, @state.lng]
+     return {
+         lat: 48.8567,
+         lng: 2.3508
+     }
+
 #     return [51.478978, -0.010642]
 
 # C'est l'état Initial du composant MyPlace
@@ -88,7 +96,8 @@ MyPlaceComponent = React.createClass
         return {
             center: [51.478978, -0.010642]
             zoom: [3]
-            position: [51.478978, -0.010642]
+            lat: [51.478978]
+            lng: [-0.010642]
         }
 
     render: ->
@@ -96,7 +105,11 @@ MyPlaceComponent = React.createClass
             MyMap
                 center: @state.center
                 zoom: @state.zoom
-                position: @state.position
+                position: @state.lat, @state.lng
+                console.log @state.center
+                console.log @state.lat
+                console.log @state.lng
+                console.log @state.zoom
 #                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
             SideBar
                bookmarkDatas: @props.bookmarkDatas
@@ -119,7 +132,7 @@ MyPlaceComponent = React.createClass
     onShowMeThatClicked: ->
         @setState
             center: getShowMeThat()
-            zoom: [19]
+            zoom: [17]
             position: getShowMeThat()
 
 # Ici on initialise l'application.
