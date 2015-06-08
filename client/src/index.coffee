@@ -72,20 +72,15 @@ bookmarkDatas = [
 # C'est les data du composant MyPlace
 getHomePosition = (city) ->
 #    return [48.8567, 2.3508] # toujours Paris
-    return {
-        lat: 48.8567,
-        lng: 2.3508
-    }
+    return [48.8567, 2.3508]
+
 #    return [@state.coordinates]
 
 getHomeZoom = (viewmycity) ->
     return [13]
 
 getShowMeThat = (gotopin) ->
-     return {
-         lat: 48.8567,
-         lng: 2.3508
-     }
+     return [48.8567, 2.3508]
 
 #     return [51.478978, -0.010642]
 
@@ -93,23 +88,21 @@ getShowMeThat = (gotopin) ->
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return {
-            center: [51.478978, -0.010642]
-            zoom: [3]
-            lat: [51.478978]
-            lng: [-0.010642]
-        }
+        return center: [51.478978, -0.010642], latlng: [51.478978, -0.010642], zoom: [3],
+
 
     render: ->
         div className: 'main',
             MyMap
                 center: @state.center
+                latlng: @state.latlng
                 zoom: @state.zoom
-                position: @state.lat, @state.lng
                 console.log @state.center
-                console.log @state.lat
-                console.log @state.lng
+                console.log @state.latlng
                 console.log @state.zoom
+
+#                console.log @state.lat
+#                console.log @state.lng
 #                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
             SideBar
                bookmarkDatas: @props.bookmarkDatas
@@ -123,7 +116,7 @@ MyPlaceComponent = React.createClass
         @setState
             center: getHomePosition()
             zoom: getHomeZoom()
-            position: getHomePosition()
+            latlng: getHomePosition()
 
     onShowZoomifyClicked: ->
         @setState
@@ -133,7 +126,7 @@ MyPlaceComponent = React.createClass
         @setState
             center: getShowMeThat()
             zoom: [17]
-            position: getShowMeThat()
+            latlng: getShowMeThat()
 
 # Ici on initialise l'application.
 initApp = ->

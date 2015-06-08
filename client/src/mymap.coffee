@@ -39,7 +39,7 @@ module.exports = MyMap = React.createFactory React.createClass
         params =
             center: @props.center
             zoom: @props.zoom
-            position: @props.position
+            position: @props.latlng
             style:
                 width: (width - 440) + 'px'
                 height: height + 'px'
@@ -51,9 +51,8 @@ module.exports = MyMap = React.createFactory React.createClass
                 url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             Marker
-#                position: {lat: @props.lat, lng: @props.lng},
 #                position: @props.center,
-                position: @props.lat, @props.lng
+                position: @props.latlng
                 Popup null,
                     span className: 'gpopup',
                         "Here is @: "
