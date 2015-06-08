@@ -51,12 +51,10 @@ module.exports = MyMap = React.createFactory React.createClass
                 url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             Marker
-#                position: @props.center,
                 position: @props.latlng
                 Popup null,
                     span className: 'gpopup',
                         "Here is @: "
                         "#{@props.center}"
-                        #" my friend "
                         # can't do react action in popup? https://github.com/PaulLeCam/react-leaflet/issues/11
                         #button onClick: @props.onShowZoomifyClicked, 'ZOOM'

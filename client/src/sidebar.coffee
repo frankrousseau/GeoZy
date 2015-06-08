@@ -16,6 +16,7 @@ module.exports = SideBar = React.createFactory React.createClass
             div className: 'home-button',
                 button onClick: @props.onShowHomeClicked, 'Show Home'
                 button onClick: @props.onShowZoomifyClicked, 'ZOOM'
+                button onClick: @props.onShowMeThatClicked, 'GO '
             div id: "asearch", className: 'search', 'search'
             input className: 'input', null
 
@@ -98,15 +99,23 @@ BookmarkComponent = React.createFactory React.createClass
             coordinates: @props.coordinates
             lat: @props.lat
             lng: @props.lng
+            latlng: [@props.lat, @props.lng]
+            center: [@props.lat, @props.lng]
+            zoom: [15]
         }
 
 # Rendering items on listings sidebar
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
+            div onClick: @props.onShowMeThatClicked
             p {className: "title"},
                 "#{@state.label}"
                  br null, null
+                button onClick: @props.onShowMeThatClicked, 'GO '
+                console.log @state.center, "div"
+                console.log @state.latlng, "div"
+                console.log @state.zoom, "div"
             span {className: "mygps"},
                 "Lat: #{@state.lat} Lng: #{@state.lng}"
                  br null, null
@@ -117,8 +126,7 @@ BookmarkComponent = React.createFactory React.createClass
                 "#{@state.state} "
                 "#{@state.zip} "
                 "#{@state.country}"
-                button onClick: @props.onShowMeThatClicked, 'GO '
-                
+
                 div id: 'infow',
             p {className: 'kontact'},
                 a href: @state.website, target: '_blank', @state.website + ' '
