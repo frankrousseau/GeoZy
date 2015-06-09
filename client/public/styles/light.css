@@ -1,10 +1,4 @@
-
 button { cursor: pointer; }
-
-* {
-  boxSizing: border-box;
-}
-
 body {
   color:#45199d;
   font:400 15px/22px 'Source Sans Pro';
@@ -36,7 +30,7 @@ input {
     display: inline;
     line-height:20px;
 }
-span#address { display:block; }
+span.address { display:block; }
 
 .search {
   background: lightgrey;
@@ -44,8 +38,7 @@ span#address { display:block; }
   height: 45px;
   padding: 10px 20px;
   padding-right: 5px;
-  font: 18px 'Source Sans Pro';
-  font-weight:580;
+  font:600 18px 'Source Sans Pro';
   color: #34A6FF;
   display: inline-block;
 }
@@ -103,7 +96,6 @@ span#address { display:block; }
   margin-top: 6px;
   margin-bottom: 0px;
 }
-
 .listings .item .irl {
   color:#555555;
   font-size:15px;
@@ -133,9 +125,7 @@ span#address { display:block; }
 .gpopup {
   color:#555555;
   background:#fff;
-  font: 'Source Sans Pro';
-  font-size:11px;
-  font-weight:600;
+  font:600 11px 'Source Sans Pro';
   line-height:12px;
 }
 .gpopup a { color: #000; }

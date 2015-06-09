@@ -70,13 +70,16 @@ bookmarkDatas = [
 ]
 
 # C'est les data du composant MyPlace
-getHomePosition = (city) ->
+getHomeMapCenter = (myview) ->
     return [48.8567, 2.3508]  # ici c'est Paris
 
-getHomeZoom = (viewmycity) ->
-    return [13]
+getMarkerPosition = (pinpoint) ->
+    return [48.8567, 2.3508]  # ici c'est centre de la carte
 
-getShowMeThat = (gotopin) ->
+getZoomify = (zoomme) -> # ici le Zoom
+    return [18]
+
+getDashTo = (gotopin) -> #ici les coord du marker
      return [48.8567, 2.3508]
 
 
@@ -84,49 +87,52 @@ getShowMeThat = (gotopin) ->
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-
-            center: [51.478978, -0.010642]
-            latlng: [51.478978, -0.010642]
-            zoom: [3]
+        return center: [51.478978, -0.010642], markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], mapzoom: [3],
 
 
     render: ->
         div className: 'main',
             MyMap
                 center: @state.center
-                latlng: @state.latlng
-                zoom: @state.zoom
-                bookmarkDatas: @props.bookmarkDatas
-                console.log @state.center, "map"
-                console.log @state.latlng, "map"
-                console.log @state.zoom, "map"
-
-#                console.log @state.lat
-#                console.log @state.lng
+                markerlatlng: @state.markerlatlng
+                maplatlng: @state.maplatlng
+                mapzoom: @state.mapzoom
+#                bookmarkDatas: @props.bookmarkDatas
+                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.mapzoom, "MyMap-Mrkpos", @state.markerlatlng
 #                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
             SideBar
+#               MyPlaceComponent: @props.MyPlaceComponent
                bookmarkDatas: @props.bookmarkDatas
-               onShowHomeClicked: @onShowHomeClicked
+               onShowHomeMapCenterClicked: @onShowHomeMapCenterClicked
+               onShowMarkerPositionClicked: @onShowMarkerPositionClicked
                onShowZoomifyClicked: @onShowZoomifyClicked
-               onShowMeThatClicked: @onShowMeThatClicked
+               onShowDashToClicked: @onShowDashToClicked
 
 
 # Attribution de l'état du composant My Place
-    onShowHomeClicked: ->
+    onShowHomeMapCenterClicked: ->
         @setState
-            center: getHomePosition()
-            zoom: getHomeZoom()
-            latlng: getHomePosition()
+            maplatlng: getHomeMapCenter()
+            mapzoom: getZoomify()
+            markerlatlng: getHomeMapCenter()
+
+    onShowMarkerPositionClicked: ->
+       @setState
+           markerlatlng: getMarkerPosition()
 
     onShowZoomifyClicked: ->
         @setState
-            zoom: getHomeZoom()
+            center: getDashTo()
+            zoom: getZoomify()
+            latlng: getDashTo()
+            position: getDashTo()
 
-    onShowMeThatClicked: ->
+    onShowDashToClicked: ->
         @setState
-            center: getShowMeThat()
-            zoom: [17]
-            latlng: getShowMeThat()
+            center: getDashTo()
+            zoom: [19]
+            latlng: getDashTo()
+            position: getDashTo()
 
 # Ici on initialise l'application.
 initApp = ->

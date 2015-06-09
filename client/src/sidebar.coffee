@@ -7,16 +7,17 @@ React = require 'react'
 #fa fa-map-marker
 #fa fa-globe
 
-# C'est la barre qui apparait à gauche. Elle contient la liste des bookmarks
-# disponibles.
+# contient la liste des bookmarks disponibles.
 module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
         div className: 'sidebar',
             div className: 'home-button',
-                button onClick: @props.onShowHomeClicked, 'Show Home'
-                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
-                button onClick: @props.onShowMeThatClicked, 'GO '
+                button onClick: @props.onShowHomeMapCenterClicked, 'Show Home'
+#                console.log "Srh-maplatlng", @state.maplatlng, "Srh-zoom", @state.mapzoom, "Srh-Mrkpos", @state.markerlatlng
+#                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
+#                button onClick: @props.onShowMeThatClicked, 'GO '
+#                console.log "divsearch-center", @state.center, "divsearch-position", @state.position, "divsearch-latlng", @state.latlng, "divsearch-zoom", @state.zoom
             div id: "asearch", className: 'search', 'search'
             input className: 'input', null
 
@@ -108,14 +109,11 @@ BookmarkComponent = React.createFactory React.createClass
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
-            div onClick: @props.onShowMeThatClicked
+#            div onClick: @props.onShowDashToClicked
+#            console.log "BookMItems-center", @state.center, "BookItems-position", @state.position, "BookMItems-latlng", @state.latlng, "BookMItems-zoom", @state.zoom
             p {className: "title"},
                 "#{@state.label}"
                  br null, null
-                button onClick: @props.onShowMeThatClicked, 'GO '
-                console.log @state.center, "div"
-                console.log @state.latlng, "div"
-                console.log @state.zoom, "div"
             span {className: "mygps"},
                 "Lat: #{@state.lat} Lng: #{@state.lng}"
                  br null, null

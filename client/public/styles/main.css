@@ -16,50 +16,8 @@ body {
   box-sizing:border-box;
 }
 
-.sidebar {
-  position:absolute;
-  width:23%;
-  height:100%;
-  top:0;left:0;
-  overflow:hidden;
-  background: lightgrey;
-  border-right:1px solid rgba(0,0,0,0.25);
-}
 .pad2 {
   padding:20px;
-}
-.heading {
-  background:#fff;
-  font: 32px 'Source Sans Pro';
-  font-weight:700;
-  color: #34A6FF;
-  border-bottom:1px solid #eee;
-  height:60px;
-  line-height:60px;
-  padding:0 60px;
-}
-}
-.showgps {
-  background:#fff;
-  font: 12px 'Source Sans Pro';
-  font-weight:200;
-  color: #555555;
-  border-bottom:1px solid #eee;
-  height:120px;
-  line-height:10px;
-  padding:0 10px;
-}
-.listings {
-  height:100%;
-  overflow:auto;
-  padding-bottom:60px;
-}
-.listings .item {
-  color: #555555;
-  display:block;
-  border-bottom:1px solid #eee;
-  padding:10px;
-  text-decoration:none;
 }
 .listings .item:last-child { border-bottom:none; }
 .listings .item .title {
@@ -104,22 +62,6 @@ body {
   clear:both;
   visibility:hidden;
 }
-.quiet {
-  color:#888;
-}
-.hot {
-  color:#fe8800;
-}
-}
-.tagz {
-  color:#34A6FF;
-}
-a {
-    color:#404040;
-    text-decoration:none;
-}
-a:hover { color:#101010; }
-
     /* Marker tweaks */
     .leaflet-popup-close-button {
       display:none;
@@ -182,11 +124,6 @@ a:hover { color:#101010; }
     .leaflet-control-locate.requesting a {
       padding: 3px 0 0 4px;
     }
-
-.markerat {
-  position: center;
-
-}
 
 
     pre.ui-coordinates {
