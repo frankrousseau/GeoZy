@@ -11,17 +11,6 @@ ImageOverlay = React.createFactory ImageOverlay
 Marker = React.createFactory Marker
 Popup = React.createFactory Popup
 
-# Custom
-
-#get mouse coodrinates
-#Mcoordinates = document.getElementById('coordinates')
-#Map 'mousemove', (e) ->
-#  m = e.LatLng
-#  Mcoordinates.innerHTML = 'Latitude: ' + m.Lat + '<br />Longitude: ' + m.Lng
-#  return
-#  render: -> console.log m.Lat
-
-
 # debug map size
 width = window.innerWidth or \
     document.documentElement.clientWidth or \
@@ -34,13 +23,12 @@ height = window.innerHeight or \
 
 module.exports = MyMap = React.createFactory React.createClass
 
-
     render: ->
 
         params =
 #            id: geozymap                  #(optional) ReferenceError: geozymap is not defined
             center: @props.maplatlng         #LatLng (required, dynamic) Center of the map
-            zoom: @props.mapzoom             #Number (optional, dynamic)
+            zoom: @props.homezoom             #Number (optional, dynamic)
             style:                        #Object (optional, dynamic)
                 width: (width - 440) + 'px'
                 height: height + 'px'
@@ -64,6 +52,26 @@ module.exports = MyMap = React.createFactory React.createClass
 #                    position: 'latlng'      #LatLng (optional, dynamic)
                     span className: 'gpopup',
                         "Here is #{@props.label}: "
-                        "#{@props.center}"
+                        "#{@props.markerlatlng}"
                         # can't do react action in popup? https://github.com/PaulLeCam/react-leaflet/issues/11
                         #button onClick: @props.onShowZoomifyClicked, 'ZOOM'
+
+
+
+MyListingsComponent = React.createFactory React.createClass
+    getInitialState: ->
+        return BookmarkComponent: @props.BookmarkComponent
+
+    render: ->
+        @getBookmarkComponent()
+
+
+
+        # Custom
+        # get mouse coodrinates
+        # Mcoordinates = document.getElementById('coordinates')
+        # Map 'mousemove', (e) ->
+        #  m = e.LatLng
+        #  Mcoordinates.innerHTML = 'Latitude: ' + m.Lat + '<br />Longitude: ' + m.Lng
+        #  return
+        #  render: -> console.log m.Lat

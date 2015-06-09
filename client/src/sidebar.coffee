@@ -13,17 +13,18 @@ module.exports = SideBar = React.createFactory React.createClass
     render: ->
         div className: 'sidebar',
             div className: 'home-button',
-                button onClick: @props.onShowHomeMapCenterClicked, 'Show Home'
-#                console.log "Srh-maplatlng", @state.maplatlng, "Srh-zoom", @state.mapzoom, "Srh-Mrkpos", @state.markerlatlng
+                button onClick: @props.onShowHomeDashToHomeClicked,'Show Home'
+                button onClick: @onShowDashToListingsClicked, '.'
+#                console.log "ETAT INITIAL home", @state.maplatlng
 #                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
 #                button onClick: @props.onShowMeThatClicked, 'GO '
-#                console.log "divsearch-center", @state.center, "divsearch-position", @state.position, "divsearch-latlng", @state.latlng, "divsearch-zoom", @state.zoom
             div id: "asearch", className: 'search', 'search'
             input className: 'input', null
 
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
+
 
 
 # Le composant liste de bookmark.
@@ -49,9 +50,9 @@ BookmarkListComponent = React.createFactory React.createClass
         bookmarkComponents = []
         for bookmarkData in @state.bookmarkDatas
             bookmarkComponent = BookmarkComponent
-                coordinates: bookmarkData.features[0].geometry.coordinates # /!\ coordinates: [lng,lat]
-                lng: bookmarkData.features[0].geometry.coordinates[0]
-                lat: bookmarkData.features[0].geometry.coordinates[1]
+                icoordinates: bookmarkData.features[0].geometry.coordinates # /!\ coordinates: [lng,lat]
+                ilng: bookmarkData.features[0].geometry.coordinates[0]
+                ilat: bookmarkData.features[0].geometry.coordinates[1]
 
                 type: bookmarkData.features[0].geometry.type
                 #label and coordinates should be the 2 imperatives values
@@ -98,24 +99,25 @@ BookmarkComponent = React.createFactory React.createClass
 
             type: @props.type
             coordinates: @props.coordinates
-            lat: @props.lat
-            lng: @props.lng
-            latlng: [@props.lat, @props.lng]
-            center: [@props.lat, @props.lng]
-            zoom: [15]
+            ilat: @props.ilat
+            ilng: @props.ilng
+
+            maplatlng: [@props.ilat, @props.ilng]
+            markerlatlng: [@props.ilat, @props.ilng]
+            homezoom: 15
         }
 
 # Rendering items on listings sidebar
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
-#            div onClick: @props.onShowDashToClicked
-#            console.log "BookMItems-center", @state.center, "BookItems-position", @state.position, "BookMItems-latlng", @state.latlng, "BookMItems-zoom", @state.zoom
+            button onClick: @onShowDashToListingsClicked, '.'
+            console.log "list-maplatlng", @state.maplatlng, "list-zoom", @state.homezoom, "list-Mrkpos", @state.markerlatlng
             p {className: "title"},
                 "#{@state.label}"
                  br null, null
             span {className: "mygps"},
-                "Lat: #{@state.lat} Lng: #{@state.lng}"
+                "Lat: #{@state.ilat} Lng: #{@state.ilng}"
                  br null, null
             span className: 'irl',
                 "#{@state.address} "

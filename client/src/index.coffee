@@ -6,7 +6,6 @@ MyMap = require './mymap.coffee'
 #bookmarkDatas = require './geojson/base.geojson'
 #bookmarkxDatas = require './gpx/base.gpx'
 
-# Met tes données de départ ici !
 bookmarkDatas = [
      {
         "type": "FeatureCollection"
@@ -69,70 +68,60 @@ bookmarkDatas = [
 
 ]
 
-# C'est les data du composant MyPlace
-getHomeMapCenter = (myview) ->
-    return [48.8567, 2.3508]  # ici c'est Paris
 
-getMarkerPosition = (pinpoint) ->
-    return [48.8567, 2.3508]  # ici c'est centre de la carte
+# variable Dyn du composant MyPlace
+# ici c'est Paris
+getDashToHome = (myview) ->
+    return [48.8567, 2.3508]
+# ici le Zoom
+getHomeZoomify = (zoomme) ->
+    return 18
+# ici c'est les listings de sidebar
+getDashToListings = (pinpoint) ->
+    return [48.8567, 2.3508]
 
-getZoomify = (zoomme) -> # ici le Zoom
-    return [18]
-
-getDashTo = (gotopin) -> #ici les coord du marker
-     return [48.8567, 2.3508]
 
 
 # C'est l'état Initial du composant MyPlace
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return center: [51.478978, -0.010642], markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], mapzoom: [3],
+        return dash2home: [51.478978, -0.010642], markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3,
 
 
     render: ->
         div className: 'main',
             MyMap
-                center: @state.center
+                dash2home: @state.dash2home
                 markerlatlng: @state.markerlatlng
                 maplatlng: @state.maplatlng
-                mapzoom: @state.mapzoom
-#                bookmarkDatas: @props.bookmarkDatas
-                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.mapzoom, "MyMap-Mrkpos", @state.markerlatlng
+                homezoom: @state.homezoom
+                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng
 #                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
             SideBar
+#                console.log @props.BookmarkComponents
 #               MyPlaceComponent: @props.MyPlaceComponent
                bookmarkDatas: @props.bookmarkDatas
-               onShowHomeMapCenterClicked: @onShowHomeMapCenterClicked
-               onShowMarkerPositionClicked: @onShowMarkerPositionClicked
-               onShowZoomifyClicked: @onShowZoomifyClicked
-               onShowDashToClicked: @onShowDashToClicked
+               onShowHomeDashToHomeClicked: @onShowDashToHomeClicked
+#               onShowHomeZoomifyClicked: @onShowHomeZoomifyClicked
+               onShowDashToListingsClicked: @onShowDashToListingsClicked
+
 
 
 # Attribution de l'état du composant My Place
-    onShowHomeMapCenterClicked: ->
+    onShowDashToHomeClicked: ->
         @setState
-            maplatlng: getHomeMapCenter()
-            mapzoom: getZoomify()
-            markerlatlng: getHomeMapCenter()
+            maplatlng: getDashToHome()
+            homezoom: getHomeZoomify()
+            markerlatlng: getDashToHome()
 
-    onShowMarkerPositionClicked: ->
-       @setState
-           markerlatlng: getMarkerPosition()
-
-    onShowZoomifyClicked: ->
+    onShowDashToListingsClicked: ->
         @setState
-            center: getDashTo()
-            zoom: getZoomify()
-            latlng: getDashTo()
-            position: getDashTo()
+            maplatlng: getDashToListings()
+            homezoom: 19
+            markerlatlng: getDashToListings()
 
-    onShowDashToClicked: ->
-        @setState
-            center: getDashTo()
-            zoom: [19]
-            latlng: getDashTo()
-            position: getDashTo()
+
 
 # Ici on initialise l'application.
 initApp = ->
