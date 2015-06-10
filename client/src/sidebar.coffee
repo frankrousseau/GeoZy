@@ -14,7 +14,7 @@ module.exports = SideBar = React.createFactory React.createClass
         div className: 'sidebar',
             div className: 'home-button',
                 button onClick: @props.onShowHomeDashToHomeClicked,'Show Home'
-                button onClick: @onShowDashToListingsClicked, '.'
+                button onClick: @props.onShowDashToListingsClicked, '.'
 #                console.log "ETAT INITIAL home", @state.maplatlng
 #                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
 #                button onClick: @props.onShowMeThatClicked, 'GO '
@@ -24,6 +24,8 @@ module.exports = SideBar = React.createFactory React.createClass
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
+#            MyPlaceStuffComponent
+#                MyPlaceComponent: @props.MyPlaceComponent
 
 
 
@@ -98,7 +100,7 @@ BookmarkComponent = React.createFactory React.createClass
             tag: @props.tag
 
             type: @props.type
-            coordinates: @props.coordinates
+            icoordinates: @props.icoordinates
             ilat: @props.ilat
             ilng: @props.ilng
 
@@ -111,7 +113,7 @@ BookmarkComponent = React.createFactory React.createClass
     render: ->
       div id: 'afk',                  # div afk : onclick = active && show on map (focus)
         div className: 'item',
-            button onClick: @onShowDashToListingsClicked, '.'
+            button onClick: @props.onShowDashToListingsClicked, '.'
             console.log "list-maplatlng", @state.maplatlng, "list-zoom", @state.homezoom, "list-Mrkpos", @state.markerlatlng
             p {className: "title"},
                 "#{@state.label}"

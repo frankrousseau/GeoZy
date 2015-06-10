@@ -21,6 +21,16 @@ height = window.innerHeight or \
     document.body.clientHeight
 
 
+# WTF why trying that!
+MyListingsComponent = React.createFactory React.createClass
+    getInitialState: ->
+        return BookmarkComponent: @props.BookmarkComponent
+
+    render: ->
+        @getBookmarkComponent()
+# OMG
+
+
 module.exports = MyMap = React.createFactory React.createClass
 
     render: ->
@@ -57,13 +67,6 @@ module.exports = MyMap = React.createFactory React.createClass
                         #button onClick: @props.onShowZoomifyClicked, 'ZOOM'
 
 
-
-MyListingsComponent = React.createFactory React.createClass
-    getInitialState: ->
-        return BookmarkComponent: @props.BookmarkComponent
-
-    render: ->
-        @getBookmarkComponent()
 
 
 

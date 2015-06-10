@@ -69,16 +69,21 @@ bookmarkDatas = [
 ]
 
 
-# variable Dyn du composant MyPlace
+        # variable Dyn du composant MyPlace
 # ici c'est Paris
 getDashToHome = (myview) ->
     return [48.8567, 2.3508]
-# ici le Zoom
+# ici le Zoom de la Home
 getHomeZoomify = (zoomme) ->
-    return 18
+    return 12
+
+
 # ici c'est les listings de sidebar
 getDashToListings = (pinpoint) ->
-    return [48.8567, 2.3508]
+    return [48.1337, 2.4242]
+# ici c'est le zoom du marker
+getListingsZoomify = (zoomthat) ->
+    return 19
 
 
 
@@ -86,26 +91,26 @@ getDashToListings = (pinpoint) ->
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return dash2home: [51.478978, -0.010642], markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3,
+        return markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3, ilat: 51.003131, ilng: -0.01258888,
 
 
     render: ->
         div className: 'main',
+            SideBar
+                bookmarkDatas: @props.bookmarkDatas
+                onShowHomeDashToHomeClicked: @onShowDashToHomeClicked
+#               onShowHomeZoomifyClicked: @onShowHomeZoomifyClicked
+                onShowDashToListingsClicked: @onShowDashToListingsClicked
+#                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked
             MyMap
-                dash2home: @state.dash2home
                 markerlatlng: @state.markerlatlng
                 maplatlng: @state.maplatlng
                 homezoom: @state.homezoom
-                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng
-#                onShowZoomifyClicked: @onShowZoomifyClicked #need to fix cf: mymap 52,25
-            SideBar
-#                console.log @props.BookmarkComponents
-#               MyPlaceComponent: @props.MyPlaceComponent
-               bookmarkDatas: @props.bookmarkDatas
-               onShowHomeDashToHomeClicked: @onShowDashToHomeClicked
-#               onShowHomeZoomifyClicked: @onShowHomeZoomifyClicked
-               onShowDashToListingsClicked: @onShowDashToListingsClicked
+                ilat: @state.ilat
+                ilng: @state.ilng
 
+                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng
+#                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked #need to fix cf: mymap 52,25
 
 
 # Attribution de l'état du composant My Place
@@ -117,9 +122,9 @@ MyPlaceComponent = React.createClass
 
     onShowDashToListingsClicked: ->
         @setState
-            maplatlng: getDashToListings()
-            homezoom: 19
-            markerlatlng: getDashToListings()
+            maplatlng: [@props.ilat, @props.ilng]
+            homezoom: getListingsZoomify()
+            markerlatlng: [@props.ilat, @props.ilng]
 
 
 
