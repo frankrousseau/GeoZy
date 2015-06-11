@@ -106,8 +106,7 @@ MyPlaceComponent = React.createClass
                 markerlatlng: @state.markerlatlng
                 maplatlng: @state.maplatlng
                 homezoom: @state.homezoom
-                ilat: @state.ilat
-                ilng: @state.ilng
+                BookmarkComponent: @state.BookmarkComponent
 
                 console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng
 #                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked #need to fix cf: mymap 52,25
