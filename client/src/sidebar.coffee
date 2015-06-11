@@ -96,32 +96,38 @@ BookmarkComponent = React.createFactory React.createClass
             homezoom: 15
         }
 
+# envoie des @state dans index
+
+
 # Rendering items on listings sidebar
     render: ->
-      div id: 'afk',                  # div afk : onclick = active && show on map (focus)
-        div className: 'item',
-            button onClick: @props.onShowDashToListingsClicked, '.'
-            console.log "list-maplatlng", @state.maplatlng, "list-zoom", @state.homezoom, "list-Mrkpos", @state.markerlatlng
-            p {className: "title"},
-                "#{@state.label}"
-                 br null, null
-            span {className: "mygps"},
-                "Lat: #{@state.ilat} Lng: #{@state.ilng}"
-                 br null, null
-            span className: 'irl',
-                "#{@state.address} "
-                "#{@state.postalCode} "
-                "#{@state.city}, "    # ','Should be a if conditions
-                "#{@state.state} "
-                "#{@state.zip} "
-                "#{@state.country}"
+      div className: 'main',
+          BookmarkComponent: @state.BookmarkComponent
+          SideBar
+          div id: 'afk',                  # div afk : onclick = active && show on map (focus)
+            div className: 'item',
+                button onClick: @props.onShowDashToListingsClicked, '.'
+                console.log "list-maplatlng", @state.maplatlng, "list-zoom", @state.homezoom, "list-Mrkpos", @state.markerlatlng
+                p {className: "title"},
+                    "#{@state.label}"
+                    br null, null
+                span {className: "mygps"},
+                    "Lat: #{@state.ilat} Lng: #{@state.ilng}"
+                     br null, null
+                span className: 'irl',
+                    "#{@state.address} "
+                    "#{@state.postalCode} "
+                    "#{@state.city}, "    # ','Should be a if conditions
+                    "#{@state.state} "
+                    "#{@state.zip} "
+                    "#{@state.country}"
 
-                div id: 'infow',
-            p {className: 'kontact'},
-                a href: @state.website, target: '_blank', @state.website + ' '
-                a href: "mailto:@state.email", target: '_top', @state.email + ' '
-                a href: "callto:@state.phone", target: '_top', @state.phone
+                    div id: 'infow',
+                p {className: 'kontact'},
+                    a href: @state.website, target: '_blank', @state.website + ' '
+                    a href: "mailto:@state.email", target: '_top', @state.email + ' '
+                    a href: "callto:@state.phone", target: '_top', @state.phone
 
-             span {className: 'tag'},
-                 "TAG: #{@state.tag}"
+                 span {className: 'tag'},
+                     "TAG: #{@state.tag}"
                                       # when click another cell unactive && unfocus the previous 1

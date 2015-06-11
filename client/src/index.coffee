@@ -120,6 +120,9 @@ MyPlaceComponent = React.createClass
             homezoom: getHomeZoomify()
             markerlatlng: getDashToHome()
 
+# récupération des lat lng des items de sidebar
+
+
     onShowDashToListingsClicked: ->
         @setState
             maplatlng: [@props.ilat, @props.ilng]
