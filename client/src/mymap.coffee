@@ -21,16 +21,6 @@ height = window.innerHeight or \
     document.body.clientHeight
 
 
-# WTF why trying that!
-MyListingsComponent = React.createFactory React.createClass
-    getInitialState: ->
-        return BookmarkComponent: @props.BookmarkComponent
-
-    render: ->
-        @getBookmarkComponent()
-# OMG
-
-
 module.exports = MyMap = React.createFactory React.createClass
 
     render: ->
@@ -70,11 +60,11 @@ module.exports = MyMap = React.createFactory React.createClass
 
 
 
-        # Custom
-        # get mouse coodrinates
-        # Mcoordinates = document.getElementById('coordinates')
-        # Map 'mousemove', (e) ->
-        #  m = e.LatLng
-        #  Mcoordinates.innerHTML = 'Latitude: ' + m.Lat + '<br />Longitude: ' + m.Lng
-        #  return
-        #  render: -> console.log m.Lat
+# Custom
+# get mouse coodrinates
+# Mcoordinates = document.getElementById('coordinates')
+# Map 'mousemove', (e) ->
+#  m = e.LatLng
+#  Mcoordinates.innerHTML = 'Latitude: ' + m.Lat + '<br />Longitude: ' + m.Lng
+#  return
+#  render: -> console.log m.Lat

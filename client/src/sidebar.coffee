@@ -14,37 +14,24 @@ module.exports = SideBar = React.createFactory React.createClass
         div className: 'sidebar',
             div className: 'home-button',
                 button onClick: @props.onShowHomeDashToHomeClicked,'Show Home'
-                button onClick: @props.onShowDashToListingsClicked, '.'
-#                console.log "ETAT INITIAL home", @state.maplatlng
-#                button onClick: @props.onShowZoomifyClicked, 'ZOOM'
-#                button onClick: @props.onShowMeThatClicked, 'GO '
             div id: "asearch", className: 'search', 'search'
-            input className: 'input', null
-
+            input className: 'input', type: 'text', placeholder: 'search for address on map...'
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
-#            MyPlaceStuffComponent
-#                MyPlaceComponent: @props.MyPlaceComponent
 
 
 
 # Le composant liste de bookmark.
 BookmarkListComponent = React.createFactory React.createClass
 
-    # On définit l'état initial du composant bookmarks, cela est utile pour le
-    # rendu dynamique. En effet on lui indique par cet état la liste des
-    # bookmarks à afficher. Il suffira de changer cette liste pour que le rendu
-    # se déclenche et que l'écran soit mis à jour en fonction.
     getInitialState: ->
         return bookmarkDatas: @props.bookmarkDatas
 
-    # Rendu du composant.
     render: ->
 
         div id: "bookmark-list", className: 'listings',
-            # Ici on génère un composant bookmark par bookmark présentes
-            # dans la liste.
+
             @getBookmarkComponents()
 
     # Cette fonction renvoie à la liste des bookmarks qu'on veut générer.

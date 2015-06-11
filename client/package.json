@@ -5,6 +5,7 @@
   "main": "src/index.coffee",
   "dependencies": {
     "leaflet": "^0.7.3",
+    "leaflet.locatecontrol": "^0.43.0",
     "react": "^0.13.1",
     "react-leaflet": "^0.6.1",
     "superagent": "^1.1.0"

@@ -12,6 +12,7 @@ It's also a part of a french [mentorship programme](https://forum.cozy.io/t/app-
 
 ATM:  
 * organize some leaflets on map
+ * [leaflet.locate](https://www.npmjs.com/package/leaflet.locatecontrol)
 * sidebar and map communications
 * rendering bookmarks on map
 
