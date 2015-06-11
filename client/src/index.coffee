@@ -91,7 +91,7 @@ getListingsZoomify = (zoomthat) ->
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3, ilat: 51.003131, ilng: -0.01258888,
+        return markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3,
 
 
     render: ->
@@ -106,10 +106,11 @@ MyPlaceComponent = React.createClass
                 markerlatlng: @state.markerlatlng
                 maplatlng: @state.maplatlng
                 homezoom: @state.homezoom
+                # récupération des @state des items de sidebar
                 BookmarkComponent: @state.BookmarkComponent
 
-                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng
-#                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked #need to fix cf: mymap 52,25
+                console.log "MyMap-maplatlng", @state.maplatlng, "MyMap-zoom", @state.homezoom, "MyMap-Mrkpos", @state.markerlatlng, "test", @state.label
+#                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked #need to fix cf: mymap 56,25
 
 
 # Attribution de l'état du composant My Place
@@ -119,7 +120,6 @@ MyPlaceComponent = React.createClass
             homezoom: getHomeZoomify()
             markerlatlng: getDashToHome()
 
-# récupération des lat lng des items de sidebar
 
 
     onShowDashToListingsClicked: ->

@@ -96,14 +96,13 @@ BookmarkComponent = React.createFactory React.createClass
             homezoom: 15
         }
 
-# envoie des @state dans index
-
+# send @props.BookmarkComponent to mymap
 
 # Rendering items on listings sidebar
     render: ->
-      div className: 'main',
-          BookmarkComponent: @state.BookmarkComponent
-          SideBar
+#      div className: 'main',
+#          BookmarkComponent: @props.BookmarkComponent
+#          SideBar
           div id: 'afk',                  # div afk : onclick = active && show on map (focus)
             div className: 'item',
                 button onClick: @props.onShowDashToListingsClicked, '.'
