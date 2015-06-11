@@ -22,16 +22,17 @@ a.active {
   color:#fe8800;
   cursor:initial;
 }
-input {
-    color:#555555;
+input { color:#555555; }
+
+span.address { display:block; }
+
+.isearch {
     border: 1px solid #34A6FF;
     border-radius: 3px;
     background-color: white;
     display: inline;
     line-height:20px;
 }
-span.address { display:block; }
-
 .search {
   background: lightgrey;
   border: 0px;
