@@ -1,8 +1,9 @@
 React = require 'react'
 # Optional L to use vanilla leaflet
-#L = require 'leaflet'
+L = require 'leaflet'
 
 {mapCenter, setZoom} = require 'leaflet.defaultextent'
+L.control.locate = require 'leaflet.locatecontrol'
 
 {div, p, a, button, span, input, label, h1} = React.DOM
 {Map, TileLayer, ImageOverlay, Marker, Popup} = require 'react-leaflet'
@@ -47,6 +48,7 @@ module.exports = MyMap = React.createFactory React.createClass
                 right: '0px'
 
         Map params,
+            locatecontrol: 'leaflet.locatecontrol'
             TileLayer
                 url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'    #String (required, dynamic)
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
