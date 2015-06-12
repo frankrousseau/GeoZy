@@ -69,19 +69,12 @@ bookmarkDatas = [
 ]
 
 
-        # variable Dyn du composant MyPlace
-# ici c'est Paris
-getDashToHome = (myview) ->
-    return [48.8567, 2.3508]
-# ici le Zoom de la Home
-getHomeZoomify = (zoomme) ->
-    return 12
+# variable Dyn du composant MyPlace
 
-
-# ici c'est les listings de sidebar
+# Dash To listings
 getDashToListings = (pinpoint) ->
     return [48.1337, 2.4242]
-# ici c'est le zoom du marker
+# zoom on bookmark marker
 getListingsZoomify = (zoomthat) ->
     return 19
 
@@ -91,17 +84,14 @@ getListingsZoomify = (zoomthat) ->
 MyPlaceComponent = React.createClass
 
     getInitialState: ->
-        return markerlatlng: [51.478978, -0.010642], maplatlng: [51.478978, -0.010642], homezoom: 3,
+        return markerlatlng: [50.901389, 4.484444], maplatlng: [50.901389, 4.484444], homezoom: 8,
 
 
     render: ->
         div className: 'main',
             SideBar
                 bookmarkDatas: @props.bookmarkDatas
-                onShowHomeDashToHomeClicked: @onShowDashToHomeClicked
-#               onShowHomeZoomifyClicked: @onShowHomeZoomifyClicked
                 onShowDashToListingsClicked: @onShowDashToListingsClicked
-#                onShowListingsZoomifyClicked: @onShowListingsZoomifyClicked
             MyMap
                 markerlatlng: @state.markerlatlng
                 maplatlng: @state.maplatlng
@@ -114,14 +104,6 @@ MyPlaceComponent = React.createClass
 
 
 # Attribution de l'état du composant My Place
-    onShowDashToHomeClicked: ->
-        @setState
-            maplatlng: getDashToHome()
-            homezoom: getHomeZoomify()
-            markerlatlng: getDashToHome()
-
-
-
     onShowDashToListingsClicked: ->
         @setState
             maplatlng: [@props.ilat, @props.ilng]

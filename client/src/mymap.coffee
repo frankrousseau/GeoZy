@@ -1,8 +1,12 @@
 React = require 'react'
 # Optional L to use vanilla leaflet
 #L = require 'leaflet'
+
+{mapCenter, setZoom} = require 'leaflet.defaultextent'
+
 {div, p, a, button, span, input, label, h1} = React.DOM
 {Map, TileLayer, ImageOverlay, Marker, Popup} = require 'react-leaflet'
+
 
 # creat react-leaflet markers
 Map = React.createFactory Map
@@ -10,6 +14,8 @@ TileLayer = React.createFactory TileLayer
 ImageOverlay = React.createFactory ImageOverlay
 Marker = React.createFactory Marker
 Popup = React.createFactory Popup
+
+
 
 # debug map size
 width = window.innerWidth or \
@@ -21,14 +27,19 @@ height = window.innerHeight or \
     document.body.clientHeight
 
 
+
+
 module.exports = MyMap = React.createFactory React.createClass
 
     render: ->
 
+        mapCenter = @props.maplatlng
+        setZoom = @props.homezoom
         params =
 #            id: geozymap                  #(optional) ReferenceError: geozymap is not defined
-            center: @props.maplatlng         #LatLng (required, dynamic) Center of the map
-            zoom: @props.homezoom             #Number (optional, dynamic)
+            center: mapCenter   #@props.maplatlng         #LatLng (required, dynamic) Center of the map
+            defaultExtentControl: true
+            zoom: setZoom  #@props.homezoom             #Number (optional, dynamic)
             style:                        #Object (optional, dynamic)
                 width: (width - 440) + 'px'
                 height: height + 'px'

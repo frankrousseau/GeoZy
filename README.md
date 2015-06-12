@@ -13,6 +13,7 @@ It's also a part of a french [mentorship programme](https://forum.cozy.io/t/app-
 ATM:  
 * organize some leaflets on map
  * [leaflet.locate](https://www.npmjs.com/package/leaflet.locatecontrol)
+ * [Leaflet.defaultextent](https://github.com/nguyenning/Leaflet.defaultextent)
 * sidebar and map communications
 * rendering bookmarks on map
 

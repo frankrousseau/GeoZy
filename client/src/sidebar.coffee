@@ -12,8 +12,6 @@ module.exports = SideBar = React.createFactory React.createClass
 
     render: ->
         div className: 'sidebar',
-            div className: 'home-button',
-                button onClick: @props.onShowHomeDashToHomeClicked,'Show Home'
             div className: 'search', 'search'
             input id: "mainsearch", className: 'isearch', type: 'text', placeholder: 'search for address on map...'
             div className: 'heading', 'My Places'
