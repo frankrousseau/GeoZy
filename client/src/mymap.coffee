@@ -17,7 +17,6 @@ Marker = React.createFactory Marker
 Popup = React.createFactory Popup
 
 
-
 # debug map size
 width = window.innerWidth or \
     document.documentElement.clientWidth or \
@@ -28,16 +27,15 @@ height = window.innerHeight or \
     document.body.clientHeight
 
 
-
-
 module.exports = MyMap = React.createFactory React.createClass
 
-    render: ->
+    getInitialSate: ->
+        return firstRender: true
 
+    render: ->
         mapCenter = @props.maplatlng
         setZoom = @props.homezoom
         params =
-#            id: geozymap                  #(optional) ReferenceError: geozymap is not defined
             center: mapCenter   #@props.maplatlng         #LatLng (required, dynamic) Center of the map
             defaultExtentControl: true
             zoom: setZoom  #@props.homezoom             #Number (optional, dynamic)
@@ -47,30 +45,20 @@ module.exports = MyMap = React.createFactory React.createClass
                 left: '440px'
                 right: '0px'
 
-        Map params,
-#            L.leaflet.locatecontrol: 'leaflet.locatecontrol'
+        @map = Map params,
             TileLayer
-                url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'    #String (required, dynamic)
+                url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 attribution: '<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-#            ImageOverlay
-#                url: '' #String (required, dynamic)
-#                opacity: '' #Number (optional, dynamic)
-#                attribution: ''  #String (optional)
             Marker
-                position: @props.markerlatlng   #LatLng (required, dynamic) position du Marker
-#                icon: 'Leaflet.Icon'        #optional, dynamic / ReferenceError: Leaflet is not defined
-#                zIndexOffset: 'Number'      #(optional, dynamic)
-#                opacity: 'Number'           #(optional, dynamic)
+                position: @props.markerlatlng
                 Popup null,
-#                    position: 'latlng'      #LatLng (optional, dynamic)
                     span className: 'gpopup',
                         "Here is #{@props.label}: "
                         "#{@props.markerlatlng}"
-                        # can't do react action in popup? https://github.com/PaulLeCam/react-leaflet/issues/11
-                        #button onClick: @props.onShowZoomifyClicked, 'ZOOM'
 
-
-
+    changePosition: ->
+        alert 'change'
+        console.log @map.leafletElement
 
 
 # Custom

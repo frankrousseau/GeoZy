@@ -7,6 +7,7 @@ React = require 'react'
 #fa fa-map-marker
 #fa fa-globe
 
+
 # contient la liste des bookmarks disponibles.
 module.exports = SideBar = React.createFactory React.createClass
 
@@ -17,7 +18,7 @@ module.exports = SideBar = React.createFactory React.createClass
             div className: 'heading', 'My Places'
             BookmarkListComponent
                 bookmarkDatas: @props.bookmarkDatas
-
+                showDashToListingsClicked: @props.showDashToListingsClicked
 
 
 # Le composant liste de bookmark.
@@ -58,6 +59,7 @@ BookmarkListComponent = React.createFactory React.createClass
                 phone: bookmarkData.features[0].properties.phone
 
                 tag: bookmarkData.features[0].properties.tag
+                showDashToListingsClicked: @props.showDashToListingsClicked
 
 
             bookmarkComponents.push bookmarkComponent
@@ -94,7 +96,11 @@ BookmarkComponent = React.createFactory React.createClass
             homezoom: 15
         }
 
-# send @props.BookmarkComponent to mymap
+
+
+    onShowDashToListingsClicked: ->
+        @props.showDashToListingsClicked @state.ilat, @state.ilng
+
 
 # Rendering items on listings sidebar
     render: ->
@@ -103,7 +109,7 @@ BookmarkComponent = React.createFactory React.createClass
 #          SideBar
           div id: 'afk',                  # div afk : onclick = active && show on map (focus)
             div className: 'item',
-                button onClick: @props.onShowDashToListingsClicked, '.'
+                button onClick: @onShowDashToListingsClicked, '.'
                 console.log "list-maplatlng", @state.maplatlng, "list-zoom", @state.homezoom, "list-Mrkpos", @state.markerlatlng
                 p {className: "title"},
                     "#{@state.label}"
